@@ -1,0 +1,651 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14006ADEEF9910A01398CB44 /* Pods_Biketrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 026AA60A680DA0A6DFC06A62 /* Pods_Biketrack.framework */; };
+		B64637821DC8E30900D48DF2 /* OneBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64637811DC8E30900D48DF2 /* OneBikeViewController.swift */; };
+		B64637841DC8E59D00D48DF2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64637831DC8E59D00D48DF2 /* TableViewCell.swift */; };
+		B64637871DC8E73E00D48DF2 /* bike.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64637861DC8E73E00D48DF2 /* bike.swift */; };
+		B6C2ACC01DAFE377000464F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2ACBF1DAFE377000464F0 /* AppDelegate.swift */; };
+		B6C2ACC21DAFE377000464F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2ACC11DAFE377000464F0 /* ViewController.swift */; };
+		B6C2ACC51DAFE377000464F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C2ACC31DAFE377000464F0 /* Main.storyboard */; };
+		B6C2ACC71DAFE377000464F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C2ACC61DAFE377000464F0 /* Assets.xcassets */; };
+		B6C2ACCA1DAFE377000464F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C2ACC81DAFE377000464F0 /* LaunchScreen.storyboard */; };
+		B6C2ACD51DAFE377000464F0 /* BiketrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2ACD41DAFE377000464F0 /* BiketrackTests.swift */; };
+		B6C2ACE01DAFE377000464F0 /* BiketrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C2ACDF1DAFE377000464F0 /* BiketrackUITests.swift */; };
+		B6C7B7AC1DB2C07500BEE72F /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7AB1DB2C07500BEE72F /* homeViewController.swift */; };
+		B6C7B7AE1DB2C4CD00BEE72F /* createAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7AD1DB2C4CD00BEE72F /* createAccountViewController.swift */; };
+		B6C7B7B01DB2C4FE00BEE72F /* welcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7AF1DB2C4FE00BEE72F /* welcomeViewController.swift */; };
+		B6C7B7B21DB2C80B00BEE72F /* biketrackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6C2ACD11DAFE377000464F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6C2ACB41DAFE377000464F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6C2ACBB1DAFE377000464F0;
+			remoteInfo = Biketrack;
+		};
+		B6C2ACDC1DAFE377000464F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6C2ACB41DAFE377000464F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6C2ACBB1DAFE377000464F0;
+			remoteInfo = Biketrack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		026AA60A680DA0A6DFC06A62 /* Pods_Biketrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Biketrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89671C2D05316CF25A56D47D /* Pods-Biketrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biketrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack.release.xcconfig"; sourceTree = "<group>"; };
+		B64637811DC8E30900D48DF2 /* OneBikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneBikeViewController.swift; sourceTree = "<group>"; };
+		B64637831DC8E59D00D48DF2 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		B64637861DC8E73E00D48DF2 /* bike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bike.swift; sourceTree = "<group>"; };
+		B6C2ACBC1DAFE377000464F0 /* Biketrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biketrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6C2ACBF1DAFE377000464F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B6C2ACC11DAFE377000464F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B6C2ACC41DAFE377000464F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B6C2ACC61DAFE377000464F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6C2ACC91DAFE377000464F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B6C2ACCB1DAFE377000464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6C2ACD01DAFE377000464F0 /* BiketrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiketrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6C2ACD41DAFE377000464F0 /* BiketrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiketrackTests.swift; sourceTree = "<group>"; };
+		B6C2ACD61DAFE377000464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6C2ACDB1DAFE377000464F0 /* BiketrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiketrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6C2ACDF1DAFE377000464F0 /* BiketrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiketrackUITests.swift; sourceTree = "<group>"; };
+		B6C2ACE11DAFE377000464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6C7B7AB1DB2C07500BEE72F /* homeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
+		B6C7B7AD1DB2C4CD00BEE72F /* createAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createAccountViewController.swift; sourceTree = "<group>"; };
+		B6C7B7AF1DB2C4FE00BEE72F /* welcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = welcomeViewController.swift; sourceTree = "<group>"; };
+		B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = biketrackAPI.swift; sourceTree = "<group>"; };
+		EE3E27F5D2B62EDAEA41F49D /* Pods-Biketrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biketrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6C2ACB91DAFE377000464F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14006ADEEF9910A01398CB44 /* Pods_Biketrack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6C2ACCD1DAFE377000464F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6C2ACD81DAFE377000464F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		682E6B0DC21FB2A29AA8E2C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				026AA60A680DA0A6DFC06A62 /* Pods_Biketrack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90EE7286B1E563F2A5B5471B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE3E27F5D2B62EDAEA41F49D /* Pods-Biketrack.debug.xcconfig */,
+				89671C2D05316CF25A56D47D /* Pods-Biketrack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B64637851DC8E72A00D48DF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B64637861DC8E73E00D48DF2 /* bike.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B6C2ACB31DAFE377000464F0 = {
+			isa = PBXGroup;
+			children = (
+				B6C2ACBE1DAFE377000464F0 /* Biketrack */,
+				B6C2ACD31DAFE377000464F0 /* BiketrackTests */,
+				B6C2ACDE1DAFE377000464F0 /* BiketrackUITests */,
+				B6C2ACBD1DAFE377000464F0 /* Products */,
+				90EE7286B1E563F2A5B5471B /* Pods */,
+				682E6B0DC21FB2A29AA8E2C7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B6C2ACBD1DAFE377000464F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6C2ACBC1DAFE377000464F0 /* Biketrack.app */,
+				B6C2ACD01DAFE377000464F0 /* BiketrackTests.xctest */,
+				B6C2ACDB1DAFE377000464F0 /* BiketrackUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6C2ACBE1DAFE377000464F0 /* Biketrack */ = {
+			isa = PBXGroup;
+			children = (
+				B64637851DC8E72A00D48DF2 /* Model */,
+				B64637811DC8E30900D48DF2 /* OneBikeViewController.swift */,
+				B6C2ACBF1DAFE377000464F0 /* AppDelegate.swift */,
+				B6C2ACC11DAFE377000464F0 /* ViewController.swift */,
+				B6C2ACC31DAFE377000464F0 /* Main.storyboard */,
+				B6C2ACC61DAFE377000464F0 /* Assets.xcassets */,
+				B6C2ACC81DAFE377000464F0 /* LaunchScreen.storyboard */,
+				B6C2ACCB1DAFE377000464F0 /* Info.plist */,
+				B6C7B7AB1DB2C07500BEE72F /* homeViewController.swift */,
+				B6C7B7AD1DB2C4CD00BEE72F /* createAccountViewController.swift */,
+				B6C7B7AF1DB2C4FE00BEE72F /* welcomeViewController.swift */,
+				B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */,
+				B64637831DC8E59D00D48DF2 /* TableViewCell.swift */,
+			);
+			path = Biketrack;
+			sourceTree = "<group>";
+		};
+		B6C2ACD31DAFE377000464F0 /* BiketrackTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6C2ACD41DAFE377000464F0 /* BiketrackTests.swift */,
+				B6C2ACD61DAFE377000464F0 /* Info.plist */,
+			);
+			path = BiketrackTests;
+			sourceTree = "<group>";
+		};
+		B6C2ACDE1DAFE377000464F0 /* BiketrackUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B6C2ACDF1DAFE377000464F0 /* BiketrackUITests.swift */,
+				B6C2ACE11DAFE377000464F0 /* Info.plist */,
+			);
+			path = BiketrackUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6C2ACBB1DAFE377000464F0 /* Biketrack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6C2ACE41DAFE377000464F0 /* Build configuration list for PBXNativeTarget "Biketrack" */;
+			buildPhases = (
+				FCD129D003A496794385C1B5 /* [CP] Check Pods Manifest.lock */,
+				B6C2ACB81DAFE377000464F0 /* Sources */,
+				B6C2ACB91DAFE377000464F0 /* Frameworks */,
+				B6C2ACBA1DAFE377000464F0 /* Resources */,
+				9A901662C15AD47C6F9B8C7C /* [CP] Embed Pods Frameworks */,
+				7A98073A5F11D71885578A7A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Biketrack;
+			productName = Biketrack;
+			productReference = B6C2ACBC1DAFE377000464F0 /* Biketrack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B6C2ACCF1DAFE377000464F0 /* BiketrackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6C2ACE71DAFE377000464F0 /* Build configuration list for PBXNativeTarget "BiketrackTests" */;
+			buildPhases = (
+				B6C2ACCC1DAFE377000464F0 /* Sources */,
+				B6C2ACCD1DAFE377000464F0 /* Frameworks */,
+				B6C2ACCE1DAFE377000464F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6C2ACD21DAFE377000464F0 /* PBXTargetDependency */,
+			);
+			name = BiketrackTests;
+			productName = BiketrackTests;
+			productReference = B6C2ACD01DAFE377000464F0 /* BiketrackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B6C2ACDA1DAFE377000464F0 /* BiketrackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6C2ACEA1DAFE377000464F0 /* Build configuration list for PBXNativeTarget "BiketrackUITests" */;
+			buildPhases = (
+				B6C2ACD71DAFE377000464F0 /* Sources */,
+				B6C2ACD81DAFE377000464F0 /* Frameworks */,
+				B6C2ACD91DAFE377000464F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6C2ACDD1DAFE377000464F0 /* PBXTargetDependency */,
+			);
+			name = BiketrackUITests;
+			productName = BiketrackUITests;
+			productReference = B6C2ACDB1DAFE377000464F0 /* BiketrackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6C2ACB41DAFE377000464F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Biketrack;
+				TargetAttributes = {
+					B6C2ACBB1DAFE377000464F0 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = Z6NNV348NG;
+						ProvisioningStyle = Automatic;
+					};
+					B6C2ACCF1DAFE377000464F0 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = Z6NNV348NG;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B6C2ACBB1DAFE377000464F0;
+					};
+					B6C2ACDA1DAFE377000464F0 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = Z6NNV348NG;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B6C2ACBB1DAFE377000464F0;
+					};
+				};
+			};
+			buildConfigurationList = B6C2ACB71DAFE377000464F0 /* Build configuration list for PBXProject "Biketrack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6C2ACB31DAFE377000464F0;
+			productRefGroup = B6C2ACBD1DAFE377000464F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6C2ACBB1DAFE377000464F0 /* Biketrack */,
+				B6C2ACCF1DAFE377000464F0 /* BiketrackTests */,
+				B6C2ACDA1DAFE377000464F0 /* BiketrackUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6C2ACBA1DAFE377000464F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6C2ACCA1DAFE377000464F0 /* LaunchScreen.storyboard in Resources */,
+				B6C2ACC71DAFE377000464F0 /* Assets.xcassets in Resources */,
+				B6C2ACC51DAFE377000464F0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6C2ACCE1DAFE377000464F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6C2ACD91DAFE377000464F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A98073A5F11D71885578A7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A901662C15AD47C6F9B8C7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCD129D003A496794385C1B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6C2ACB81DAFE377000464F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6C7B7AE1DB2C4CD00BEE72F /* createAccountViewController.swift in Sources */,
+				B64637841DC8E59D00D48DF2 /* TableViewCell.swift in Sources */,
+				B6C2ACC21DAFE377000464F0 /* ViewController.swift in Sources */,
+				B6C7B7AC1DB2C07500BEE72F /* homeViewController.swift in Sources */,
+				B6C7B7B01DB2C4FE00BEE72F /* welcomeViewController.swift in Sources */,
+				B6C7B7B21DB2C80B00BEE72F /* biketrackAPI.swift in Sources */,
+				B64637821DC8E30900D48DF2 /* OneBikeViewController.swift in Sources */,
+				B64637871DC8E73E00D48DF2 /* bike.swift in Sources */,
+				B6C2ACC01DAFE377000464F0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6C2ACCC1DAFE377000464F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6C2ACD51DAFE377000464F0 /* BiketrackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6C2ACD71DAFE377000464F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6C2ACE01DAFE377000464F0 /* BiketrackUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6C2ACD21DAFE377000464F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6C2ACBB1DAFE377000464F0 /* Biketrack */;
+			targetProxy = B6C2ACD11DAFE377000464F0 /* PBXContainerItemProxy */;
+		};
+		B6C2ACDD1DAFE377000464F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6C2ACBB1DAFE377000464F0 /* Biketrack */;
+			targetProxy = B6C2ACDC1DAFE377000464F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6C2ACC31DAFE377000464F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6C2ACC41DAFE377000464F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B6C2ACC81DAFE377000464F0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6C2ACC91DAFE377000464F0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6C2ACE21DAFE377000464F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B6C2ACE31DAFE377000464F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6C2ACE51DAFE377000464F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE3E27F5D2B62EDAEA41F49D /* Pods-Biketrack.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z6NNV348NG;
+				INFOPLIST_FILE = Biketrack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = login.Biketrack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B6C2ACE61DAFE377000464F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89671C2D05316CF25A56D47D /* Pods-Biketrack.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z6NNV348NG;
+				INFOPLIST_FILE = Biketrack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = login.Biketrack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B6C2ACE81DAFE377000464F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Z6NNV348NG;
+				INFOPLIST_FILE = BiketrackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = login.BiketrackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Biketrack.app/Biketrack";
+			};
+			name = Debug;
+		};
+		B6C2ACE91DAFE377000464F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Z6NNV348NG;
+				INFOPLIST_FILE = BiketrackTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = login.BiketrackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Biketrack.app/Biketrack";
+			};
+			name = Release;
+		};
+		B6C2ACEB1DAFE377000464F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = Z6NNV348NG;
+				INFOPLIST_FILE = BiketrackUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = login.BiketrackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Biketrack;
+			};
+			name = Debug;
+		};
+		B6C2ACEC1DAFE377000464F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = Z6NNV348NG;
+				INFOPLIST_FILE = BiketrackUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = login.BiketrackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Biketrack;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6C2ACB71DAFE377000464F0 /* Build configuration list for PBXProject "Biketrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6C2ACE21DAFE377000464F0 /* Debug */,
+				B6C2ACE31DAFE377000464F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6C2ACE41DAFE377000464F0 /* Build configuration list for PBXNativeTarget "Biketrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6C2ACE51DAFE377000464F0 /* Debug */,
+				B6C2ACE61DAFE377000464F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6C2ACE71DAFE377000464F0 /* Build configuration list for PBXNativeTarget "BiketrackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6C2ACE81DAFE377000464F0 /* Debug */,
+				B6C2ACE91DAFE377000464F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6C2ACEA1DAFE377000464F0 /* Build configuration list for PBXNativeTarget "BiketrackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6C2ACEB1DAFE377000464F0 /* Debug */,
+				B6C2ACEC1DAFE377000464F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6C2ACB41DAFE377000464F0 /* Project object */;
+}
