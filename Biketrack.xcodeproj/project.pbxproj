@@ -22,6 +22,7 @@
 		B6C7B7AE1DB2C4CD00BEE72F /* createAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7AD1DB2C4CD00BEE72F /* createAccountViewController.swift */; };
 		B6C7B7B01DB2C4FE00BEE72F /* welcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7AF1DB2C4FE00BEE72F /* welcomeViewController.swift */; };
 		B6C7B7B21DB2C80B00BEE72F /* biketrackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */; };
+		B6E9CA311E4C0FB200DE1A54 /* BikeTrackEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9CA301E4C0FB200DE1A54 /* BikeTrackEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		B6C7B7AD1DB2C4CD00BEE72F /* createAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createAccountViewController.swift; sourceTree = "<group>"; };
 		B6C7B7AF1DB2C4FE00BEE72F /* welcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = welcomeViewController.swift; sourceTree = "<group>"; };
 		B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = biketrackAPI.swift; sourceTree = "<group>"; };
+		B6E9CA301E4C0FB200DE1A54 /* BikeTrackEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeTrackEndpoint.swift; sourceTree = "<group>"; };
 		EE3E27F5D2B62EDAEA41F49D /* Pods-Biketrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biketrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,7 @@
 				B6C7B7AF1DB2C4FE00BEE72F /* welcomeViewController.swift */,
 				B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */,
 				B64637831DC8E59D00D48DF2 /* TableViewCell.swift */,
+				B6E9CA301E4C0FB200DE1A54 /* BikeTrackEndpoint.swift */,
 			);
 			path = Biketrack;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				B6C2ACC21DAFE377000464F0 /* ViewController.swift in Sources */,
 				B6C7B7AC1DB2C07500BEE72F /* homeViewController.swift in Sources */,
 				B6C7B7B01DB2C4FE00BEE72F /* welcomeViewController.swift in Sources */,
+				B6E9CA311E4C0FB200DE1A54 /* BikeTrackEndpoint.swift in Sources */,
 				B6C7B7B21DB2C80B00BEE72F /* biketrackAPI.swift in Sources */,
 				B64637821DC8E30900D48DF2 /* OneBikeViewController.swift in Sources */,
 				B64637871DC8E73E00D48DF2 /* bike.swift in Sources */,
