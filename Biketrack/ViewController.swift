@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var rxButton: UIButton!
+    
     var biketrackApi = BiketrackAPI()
     let alertController = UIAlertController(title: "login", message: "", preferredStyle: UIAlertControllerStyle.alert)
     let disposeBag = DisposeBag()
@@ -31,39 +33,42 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func printResponse(response: Any) -> Bool {
+        if let dict = response as? Dictionary<String, AnyObject> {
+            if (dict["error"] != nil) {
+                return false
+            }
+        }
+        return true
+    }
     
     func setupRx() {
-        print("toto")
-        _ = self.provider
-        .request(BikeTrackTestRx.userLogIn(username: "test", password: "test"))
-        .mapJSON()
+        _ = rxButton.rx.tap
+        .flatMap({return self.biketrackApi.login(username: self.email.text!, password: self.password.text!)})
         .subscribe({ event in
             switch event {
                 case let .next(response):
-                    print(response)
-                    print("c'est un succes")
-                case let .error(error):
-                    print(error)
-                    print("c'est une erreur")
+                    self.printResponse(response: response) ? self.performSegue(withIdentifier: "loginToWelcome", sender: nil) : print("error")
                 default:
-                    break
-                }
-            })
-    }
-    
-    @IBAction func onPushLogin(_ sender: UIButton) {
-        biketrackApi.login(username: self.email.text!, password: self.password.text!) {
-            (loginSuccess) -> () in
-            if (loginSuccess) {
-                print("success")
-                self.performSegue(withIdentifier: "loginToWelcome", sender: nil)
-            } else {
-                self.alertController.message = "log in failed"
+                    print("defaut")
             }
-            self.present(self.alertController, animated: true, completion: nil)
-        }
+        })
     }
     
+//    @IBAction func onPushLogin(_ sender: UIButton) {
+//        biketrackApi.login(username: self.email.text!, password: self.password.text!) {
+//            (loginSuccess) -> () in
+//            if (loginSuccess) {
+//                print("success")
+//                self.performSegue(withIdentifier: "loginToWelcome", sender: nil)
+//            } else {
+//                self.alertController.message = "log in failed"
+//            }
+//            self.present(self.alertController, animated: true, completion: nil)
+//        }
+//    }
+//    
 //    func checkTextField() {
 //        let validEmailObservable = emailTextField.rx.text.map { email in
 //            email!.characters.count > 5
