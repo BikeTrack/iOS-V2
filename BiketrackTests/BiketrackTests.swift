@@ -33,4 +33,12 @@ class BiketrackTests: XCTestCase {
         }
     }
     
+    func testInitBike() {
+        let bike = Bike(image: "http://www.google.fr/fixie.jpg", title: "fixie", lat: 1, long: 2)
+        XCTAssertEqual("http://www.google.fr/fixie.jpg", bike.image)
+        XCTAssertEqual("fixie", bike.title)
+        XCTAssertEqual(1, bike.lat)
+        XCTAssertEqual(2, bike.long)
+    }
+    
 }

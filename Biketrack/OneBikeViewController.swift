@@ -10,9 +10,35 @@ import UIKit
 
 class OneBikeViewController: UIViewController {
 
+    @IBOutlet weak var bikeImg: UIImageView!
+    @IBOutlet weak var bikeTitle: UILabel!
+    private var _bike: Bike!
+    @IBOutlet weak var viewGMAP: UIView!
+    
+    var bike: Bike {
+        get {
+            return _bike
+        } set {
+            _bike = newValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bikeTitle.text = bike.title
+        
+        let url = URL(string: bike.image)!
+        
+        DispatchQueue.global().async {
+            do {
+                let data = try Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    self.bikeImg.image = UIImage(data: data)
+                }
+            } catch {
+                // handle the error
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +49,12 @@ class OneBikeViewController: UIViewController {
     
     @IBAction func BackBtnPressed(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? GmapViewController {
+           destination.bike = bike
+        }
     }
 
     /*

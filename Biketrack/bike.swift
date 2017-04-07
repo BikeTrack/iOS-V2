@@ -36,4 +36,11 @@ class Bike {
         _lat = lat
         _long = long
     }
+    
+    init(title: String) {
+        _image = "http://france3-regions.francetvinfo.fr/auvergne-rhone-alpes/sites/regions_france3/files/styles/top_big/public/assets/images/2016/04/25/fixie_1.jpg?itok=RENG_8nh"
+        _title = title
+        _lat = 50.0
+        _long = 50.0
+    }
 }

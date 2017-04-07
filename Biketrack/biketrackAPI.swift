@@ -7,42 +7,34 @@
 //
 
 import Moya
-import Moya_ModelMapper
+import MoyaSugar
 import Foundation
 import Alamofire
 import RxSwift
 import RxCocoa
 
-
-let API_URL = "https://biketrack-api.herokuapp.com/api/"
+/* 
+ ** Class pour tout ce qui concerne l'interaction avec l'api.
+ ** Voir le fichier BikeTrackEndpoint.swift pour la configuration
+ ** de la librairie moya utile aux requêtes
+ */
 
 class BiketrackAPI {
     
-    var provider: RxMoyaProvider<BikeTrackTestRx>
-    
-    init() {
-        provider = RxMoyaProvider<BikeTrackTestRx>()
-    }
+    var token = ""
+    let provider = RxMoyaSugarProvider<BikeTrackTestRx>()
     
     func login(username: String, password: String) -> Observable<Any> {
-        return self.provider.request(BikeTrackTestRx.userLogIn(username: username, password: password)).mapJSON()
+        print("on est sur du login")
+        return provider.request(BikeTrackTestRx.userLogIn(mail: username, password: password)).mapJSON()
     }
     
-    func createAccount(username: String, password: String, completion: @escaping (Bool) -> ()) {
-        let parameters: Parameters = [
-            "username": "\(username)",
-            "password": "\(password)"
-        ]
-        
-        Alamofire.request(API_URL + "users", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON {response in
-            
-            if let dict = response.result.value as? Dictionary<String, AnyObject> {
-                if (dict["error"] != nil) {
-                    completion(false)
-                } else {
-                    completion(true)
-                }
-            }
-        }
+    func signup(username: String, password: String) -> Observable<Any> {
+        print("on signup ")
+        return provider.request(BikeTrackTestRx.userCreate(mail: username, password: password)).mapJSON()
+    }
+    
+    func setToken(token: String) {
+        self.token = token
     }
 }

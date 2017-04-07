@@ -7,7 +7,6 @@
 //
 
 import Moya
-import Moya_ModelMapper
 import UIKit
 import RxCocoa
 import RxSwift
@@ -21,8 +20,7 @@ class ViewController: UIViewController {
     var biketrackApi = BiketrackAPI()
     let alertController = UIAlertController(title: "login", message: "", preferredStyle: UIAlertControllerStyle.alert)
     let disposeBag = DisposeBag()
-    var provider: RxMoyaProvider<BikeTrackTestRx> = RxMoyaProvider<BikeTrackTestRx>()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRx()
@@ -36,11 +34,13 @@ class ViewController: UIViewController {
 
     func printResponse(response: Any) -> Bool {
         if let dict = response as? Dictionary<String, AnyObject> {
-            if (dict["error"] != nil) {
-                return false
+            print(dict)
+            if (dict["success"] as! Bool) {
+                biketrackApi.setToken(token: dict["token"] as! String)
+                return true
             }
         }
-        return true
+        return false
     }
     
     func setupRx() {

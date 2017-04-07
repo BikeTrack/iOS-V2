@@ -53,4 +53,16 @@ class welcomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         return bikes.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedBike = bikes[indexPath.row]
+        performSegue(withIdentifier: "OneBike", sender: selectedBike)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? OneBikeViewController {
+            if let oneBike = sender as? Bike {
+                destination.bike = oneBike
+            }
+        }
+    }
 }

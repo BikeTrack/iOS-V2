@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		14006ADEEF9910A01398CB44 /* Pods_Biketrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 026AA60A680DA0A6DFC06A62 /* Pods_Biketrack.framework */; };
+		577413205F4F2AA7B77136AE /* Pods_BiketrackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9278CC1F97C2EF094D34B0E6 /* Pods_BiketrackTests.framework */; };
+		B612E78A1E966E02009633C3 /* CreateBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612E7891E966E02009633C3 /* CreateBikeViewController.swift */; };
+		B612E78C1E97BECE009633C3 /* GmapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B612E78B1E97BECE009633C3 /* GmapViewController.swift */; };
 		B64637821DC8E30900D48DF2 /* OneBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64637811DC8E30900D48DF2 /* OneBikeViewController.swift */; };
 		B64637841DC8E59D00D48DF2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64637831DC8E59D00D48DF2 /* TableViewCell.swift */; };
 		B64637871DC8E73E00D48DF2 /* bike.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64637861DC8E73E00D48DF2 /* bike.swift */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		026AA60A680DA0A6DFC06A62 /* Pods_Biketrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Biketrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89671C2D05316CF25A56D47D /* Pods-Biketrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biketrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack.release.xcconfig"; sourceTree = "<group>"; };
+		9278CC1F97C2EF094D34B0E6 /* Pods_BiketrackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiketrackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B612E7891E966E02009633C3 /* CreateBikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBikeViewController.swift; sourceTree = "<group>"; };
+		B612E78B1E97BECE009633C3 /* GmapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GmapViewController.swift; sourceTree = "<group>"; };
 		B64637811DC8E30900D48DF2 /* OneBikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneBikeViewController.swift; sourceTree = "<group>"; };
 		B64637831DC8E59D00D48DF2 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B64637861DC8E73E00D48DF2 /* bike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bike.swift; sourceTree = "<group>"; };
@@ -66,6 +72,8 @@
 		B6C7B7AF1DB2C4FE00BEE72F /* welcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = welcomeViewController.swift; sourceTree = "<group>"; };
 		B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = biketrackAPI.swift; sourceTree = "<group>"; };
 		B6E9CA301E4C0FB200DE1A54 /* BikeTrackEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeTrackEndpoint.swift; sourceTree = "<group>"; };
+		CCE26B437A1D642F1760AFD1 /* Pods-BiketrackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiketrackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8F174F6A2E5EE9744C0E565 /* Pods-BiketrackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiketrackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests.release.xcconfig"; sourceTree = "<group>"; };
 		EE3E27F5D2B62EDAEA41F49D /* Pods-Biketrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biketrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577413205F4F2AA7B77136AE /* Pods_BiketrackTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				026AA60A680DA0A6DFC06A62 /* Pods_Biketrack.framework */,
+				9278CC1F97C2EF094D34B0E6 /* Pods_BiketrackTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -108,6 +118,8 @@
 			children = (
 				EE3E27F5D2B62EDAEA41F49D /* Pods-Biketrack.debug.xcconfig */,
 				89671C2D05316CF25A56D47D /* Pods-Biketrack.release.xcconfig */,
+				CCE26B437A1D642F1760AFD1 /* Pods-BiketrackTests.debug.xcconfig */,
+				D8F174F6A2E5EE9744C0E565 /* Pods-BiketrackTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -147,6 +159,7 @@
 			children = (
 				B64637851DC8E72A00D48DF2 /* Model */,
 				B64637811DC8E30900D48DF2 /* OneBikeViewController.swift */,
+				B612E78B1E97BECE009633C3 /* GmapViewController.swift */,
 				B6C2ACBF1DAFE377000464F0 /* AppDelegate.swift */,
 				B6C2ACC11DAFE377000464F0 /* ViewController.swift */,
 				B6C2ACC31DAFE377000464F0 /* Main.storyboard */,
@@ -159,6 +172,7 @@
 				B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */,
 				B64637831DC8E59D00D48DF2 /* TableViewCell.swift */,
 				B6E9CA301E4C0FB200DE1A54 /* BikeTrackEndpoint.swift */,
+				B612E7891E966E02009633C3 /* CreateBikeViewController.swift */,
 			);
 			path = Biketrack;
 			sourceTree = "<group>";
@@ -208,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6C2ACE71DAFE377000464F0 /* Build configuration list for PBXNativeTarget "BiketrackTests" */;
 			buildPhases = (
+				B11E2A08D3DEBEEA60E1AC5F /* [CP] Check Pods Manifest.lock */,
 				B6C2ACCC1DAFE377000464F0 /* Sources */,
 				B6C2ACCD1DAFE377000464F0 /* Frameworks */,
 				B6C2ACCE1DAFE377000464F0 /* Resources */,
+				D7F274C007482AECE17B460B /* [CP] Embed Pods Frameworks */,
+				FBB140A7A9BBA072C6990A58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,7 +264,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Biketrack;
 				TargetAttributes = {
 					B6C2ACBB1DAFE377000464F0 = {
@@ -347,6 +364,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B11E2A08D3DEBEEA60E1AC5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D7F274C007482AECE17B460B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBB140A7A9BBA072C6990A58 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FCD129D003A496794385C1B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,6 +433,8 @@
 			files = (
 				B6C7B7AE1DB2C4CD00BEE72F /* createAccountViewController.swift in Sources */,
 				B64637841DC8E59D00D48DF2 /* TableViewCell.swift in Sources */,
+				B612E78A1E966E02009633C3 /* CreateBikeViewController.swift in Sources */,
+				B612E78C1E97BECE009633C3 /* GmapViewController.swift in Sources */,
 				B6C2ACC21DAFE377000464F0 /* ViewController.swift in Sources */,
 				B6C7B7AC1DB2C07500BEE72F /* homeViewController.swift in Sources */,
 				B6C7B7B01DB2C4FE00BEE72F /* welcomeViewController.swift in Sources */,
@@ -451,6 +515,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -500,6 +565,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -554,6 +620,7 @@
 		};
 		B6C2ACE81DAFE377000464F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCE26B437A1D642F1760AFD1 /* Pods-BiketrackTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -569,6 +636,7 @@
 		};
 		B6C2ACE91DAFE377000464F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8F174F6A2E5EE9744C0E565 /* Pods-BiketrackTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
