@@ -11,10 +11,13 @@ import UIKit
 class CreateBikeViewController: UIViewController {
 
     @IBOutlet weak var bikeName: UITextField!
+    @IBOutlet weak var bikeColor: UITextField!
+    @IBOutlet weak var bikeBrand: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -28,15 +31,18 @@ class CreateBikeViewController: UIViewController {
     }
     
     @IBAction func newBike(_ sender: Any) {
-        let newBike = Bike(title: bikeName.text!)
-        performSegue(withIdentifier: "NewBike", sender: newBike)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? welcomeViewController {
-            if let bike = sender as? Bike {
-                destination.bikes.append(bike)
+        BiketrackAPI.createABike(name: bikeName.text!, color: bikeColor.text!, brand: bikeBrand.text!)
+        .subscribe{ event in
+            switch event {
+                case .next(let response):
+                    print(response)
+                case .error(let error):
+                    print(error)
+                default:
+                    print("default")
             }
         }
+        performSegue(withIdentifier: "NewBike", sender: nil)
     }
+    
 }

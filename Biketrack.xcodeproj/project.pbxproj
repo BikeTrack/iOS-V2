@@ -25,6 +25,10 @@
 		B6C7B7AE1DB2C4CD00BEE72F /* createAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7AD1DB2C4CD00BEE72F /* createAccountViewController.swift */; };
 		B6C7B7B01DB2C4FE00BEE72F /* welcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7AF1DB2C4FE00BEE72F /* welcomeViewController.swift */; };
 		B6C7B7B21DB2C80B00BEE72F /* biketrackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */; };
+		B6E6AEB21F01512200F78353 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEB11F01512200F78353 /* ProfilViewController.swift */; };
+		B6E6AEB41F069CC800F78353 /* image-de-profil-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6E6AEB31F069CC800F78353 /* image-de-profil-2.jpg */; };
+		B6E6AEB81F07CE1900F78353 /* testbike.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEB71F07CE1900F78353 /* testbike.swift */; };
+		B6E6AEBA1F07CE5F00F78353 /* testuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEB91F07CE5F00F78353 /* testuser.swift */; };
 		B6E9CA311E4C0FB200DE1A54 /* BikeTrackEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E9CA301E4C0FB200DE1A54 /* BikeTrackEndpoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +75,10 @@
 		B6C7B7AD1DB2C4CD00BEE72F /* createAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createAccountViewController.swift; sourceTree = "<group>"; };
 		B6C7B7AF1DB2C4FE00BEE72F /* welcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = welcomeViewController.swift; sourceTree = "<group>"; };
 		B6C7B7B11DB2C80B00BEE72F /* biketrackAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = biketrackAPI.swift; sourceTree = "<group>"; };
+		B6E6AEB11F01512200F78353 /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		B6E6AEB31F069CC800F78353 /* image-de-profil-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "image-de-profil-2.jpg"; path = "../Downloads/image-de-profil-2.jpg"; sourceTree = "<group>"; };
+		B6E6AEB71F07CE1900F78353 /* testbike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testbike.swift; sourceTree = "<group>"; };
+		B6E6AEB91F07CE5F00F78353 /* testuser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testuser.swift; sourceTree = "<group>"; };
 		B6E9CA301E4C0FB200DE1A54 /* BikeTrackEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeTrackEndpoint.swift; sourceTree = "<group>"; };
 		CCE26B437A1D642F1760AFD1 /* Pods-BiketrackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiketrackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8F174F6A2E5EE9744C0E565 /* Pods-BiketrackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiketrackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				B64637861DC8E73E00D48DF2 /* bike.swift */,
+				B6E6AEB71F07CE1900F78353 /* testbike.swift */,
+				B6E6AEB91F07CE5F00F78353 /* testuser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -135,6 +145,7 @@
 		B6C2ACB31DAFE377000464F0 = {
 			isa = PBXGroup;
 			children = (
+				B6E6AEB31F069CC800F78353 /* image-de-profil-2.jpg */,
 				B6C2ACBE1DAFE377000464F0 /* Biketrack */,
 				B6C2ACD31DAFE377000464F0 /* BiketrackTests */,
 				B6C2ACDE1DAFE377000464F0 /* BiketrackUITests */,
@@ -173,6 +184,7 @@
 				B64637831DC8E59D00D48DF2 /* TableViewCell.swift */,
 				B6E9CA301E4C0FB200DE1A54 /* BikeTrackEndpoint.swift */,
 				B612E7891E966E02009633C3 /* CreateBikeViewController.swift */,
+				B6E6AEB11F01512200F78353 /* ProfilViewController.swift */,
 			);
 			path = Biketrack;
 			sourceTree = "<group>";
@@ -312,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6C2ACCA1DAFE377000464F0 /* LaunchScreen.storyboard in Resources */,
+				B6E6AEB41F069CC800F78353 /* image-de-profil-2.jpg in Resources */,
 				B6C2ACC71DAFE377000464F0 /* Assets.xcassets in Resources */,
 				B6C2ACC51DAFE377000464F0 /* Main.storyboard in Resources */,
 			);
@@ -432,10 +445,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6C7B7AE1DB2C4CD00BEE72F /* createAccountViewController.swift in Sources */,
+				B6E6AEB21F01512200F78353 /* ProfilViewController.swift in Sources */,
 				B64637841DC8E59D00D48DF2 /* TableViewCell.swift in Sources */,
+				B6E6AEB81F07CE1900F78353 /* testbike.swift in Sources */,
 				B612E78A1E966E02009633C3 /* CreateBikeViewController.swift in Sources */,
 				B612E78C1E97BECE009633C3 /* GmapViewController.swift in Sources */,
 				B6C2ACC21DAFE377000464F0 /* ViewController.swift in Sources */,
+				B6E6AEBA1F07CE5F00F78353 /* testuser.swift in Sources */,
 				B6C7B7AC1DB2C07500BEE72F /* homeViewController.swift in Sources */,
 				B6C7B7B01DB2C4FE00BEE72F /* welcomeViewController.swift in Sources */,
 				B6E9CA311E4C0FB200DE1A54 /* BikeTrackEndpoint.swift in Sources */,

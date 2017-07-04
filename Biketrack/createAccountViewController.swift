@@ -47,7 +47,7 @@ class createAccountViewController: UIViewController {
     func setupRx() {
         _ = putainDeRxButton.rx.tap
             .flatMap({
-                return self.biketrackApi.signup(username: self.username.text!, password: self.password.text!)
+                return BiketrackAPI.signup(username: self.username.text!, password: self.password.text!)
             })
             .subscribe({ event in
                 switch event {

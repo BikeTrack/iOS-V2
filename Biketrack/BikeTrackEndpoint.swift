@@ -13,6 +13,9 @@ import MoyaSugar
 enum BikeTrackTestRx {
     case userLogIn(mail: String, password: String)
     case userCreate(mail: String, password: String)
+    case userInfo(userId: String)
+    case bikeInfo(bikeId: String)
+    case createBike(userId: String, name: String, color: String, brand: String)
 }
 
 extension BikeTrackTestRx: SugarTargetType {
@@ -24,6 +27,12 @@ extension BikeTrackTestRx: SugarTargetType {
                 return .post("/authenticate")
             case .userCreate(_):
                 return .post("/signup")
+            case .userInfo(let userId):
+                return .get("/profile/\(userId)")
+            case .bikeInfo(let bikeId):
+                return .get("/bike/\(bikeId)")
+            case .createBike(let _, let _, let _, let _):
+                return .post("/bike")
         }
     }
     
@@ -39,6 +48,18 @@ extension BikeTrackTestRx: SugarTargetType {
                 "mail": "\(mail)",
                 "password": "\(password)"
             ]
+        case .createBike(let userId, let name, let color, let brand):
+            return JSONEncoding.default => [
+                "userId": "\(userId)",
+                "bikeInfo": [
+                    "name": "\(name)",
+                    "color": "\(color)",
+                    "brand": "\(brand)",
+                    "tracker": "aucun"
+                ]
+            ]
+        default:
+            return nil
         }
     }
     
@@ -52,6 +73,12 @@ extension BikeTrackTestRx: SugarTargetType {
             return "{\"username\": \"toto\", \"password\": \"titi\"}".data(using: .utf8)!
         case .userCreate(_):
             return "{\"username\": \"toto\", \"password\": \"titi\"}".data(using: .utf8)!
+        case .userInfo(_):
+            return "a remplir plus tard".data(using: .utf8)!
+        case .bikeInfo(_):
+            return "a remplir plus tard".data(using: .utf8)!
+        case .createBike(_):
+            return "a remplir plus tard".data(using: .utf8)!
         }
     }
 

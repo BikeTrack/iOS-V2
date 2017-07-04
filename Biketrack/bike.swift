@@ -13,6 +13,16 @@ class Bike {
     private var _title: String!
     private var _lat: Float
     private var _long: Float
+    private var _brand: String!
+    private var _color: String!
+    
+    var brand : String {
+        return _brand
+    }
+    
+    var color : String {
+        return _color
+    }
     
     var image : String {
         return _image

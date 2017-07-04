@@ -8,6 +8,8 @@
 
 import Moya
 import MoyaSugar
+import Mapper
+import Moya_ModelMapper
 import Foundation
 import Alamofire
 import RxSwift
@@ -21,20 +23,45 @@ import RxCocoa
 
 class BiketrackAPI {
     
-    var token = ""
-    let provider = RxMoyaSugarProvider<BikeTrackTestRx>()
+    static var token = ""
+    static var userId = ""
     
-    func login(username: String, password: String) -> Observable<Any> {
+    static var provider = RxMoyaSugarProvider<BikeTrackTestRx>()
+    
+    static func login(username: String, password: String) -> Observable<Any> {
         print("on est sur du login")
         return provider.request(BikeTrackTestRx.userLogIn(mail: username, password: password)).mapJSON()
     }
     
-    func signup(username: String, password: String) -> Observable<Any> {
+    static func signup(username: String, password: String) -> Observable<Any> {
         print("on signup ")
         return provider.request(BikeTrackTestRx.userCreate(mail: username, password: password)).mapJSON()
     }
     
-    func setToken(token: String) {
-        self.token = token
+    static func getUserInfo() -> Observable<UserTest> {
+        let endpointClosure: (BikeTrackTestRx) -> Endpoint<BikeTrackTestRx> = { target in
+            let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
+            return defaultEndpoint
+                .adding(newHTTPHeaderFields: ["x-access-token": BiketrackAPI.token])
+                .adding(newHTTPHeaderFields: ["Authorization": "9E34BA33E63D1C25AC7834971C211139936C68394FEBE2BC2EA5B5F7F8664F0"])
+        }
+        provider = RxMoyaSugarProvider<BikeTrackTestRx>(endpointClosure: endpointClosure)
+        return provider.request(BikeTrackTestRx.userInfo(userId: BiketrackAPI.userId)).mapObject(type: UserTest.self, keyPath: "user")
+    }
+    
+    static func getBikeInfo(bikeId: String) -> Observable<BikeTest> {
+        return provider.request(BikeTrackTestRx.bikeInfo(bikeId: bikeId)).mapObject(type: BikeTest.self, keyPath: "bike")
+    }
+    
+    static func createABike(name: String, color: String, brand: String) -> Observable<Any> {
+        return provider.request(BikeTrackTestRx.createBike(userId: userId, name: name, color: color, brand: color)).mapJSON()
+    }
+    
+    static func setToken(token: String) {
+        BiketrackAPI.token = token
+    }
+    
+    static func setUserId(userId: String) {
+        BiketrackAPI.userId = userId
     }
 }

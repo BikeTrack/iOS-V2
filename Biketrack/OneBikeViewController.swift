@@ -12,10 +12,10 @@ class OneBikeViewController: UIViewController {
 
     @IBOutlet weak var bikeImg: UIImageView!
     @IBOutlet weak var bikeTitle: UILabel!
-    private var _bike: Bike!
+    private var _bike: BikeTest!
     @IBOutlet weak var viewGMAP: UIView!
     
-    var bike: Bike {
+    var bike: BikeTest {
         get {
             return _bike
         } set {
@@ -25,20 +25,20 @@ class OneBikeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bikeTitle.text = bike.title
+        bikeTitle.text = bike.name
         
-        let url = URL(string: bike.image)!
+//        let url = URL(string: bike.image)!
         
-        DispatchQueue.global().async {
-            do {
-                let data = try Data(contentsOf: url)
-                DispatchQueue.main.async {
-                    self.bikeImg.image = UIImage(data: data)
-                }
-            } catch {
-                // handle the error
-            }
-        }
+//        DispatchQueue.global().async {
+//            do {
+//                let data = try Data(contentsOf: url)
+//                DispatchQueue.main.async {
+//                    self.bikeImg.image = UIImage(data: data)
+//                }
+//            } catch {
+//                // handle the error
+//            }
+//        }
         // Do any additional setup after loading the view.
     }
 
@@ -53,8 +53,8 @@ class OneBikeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? GmapViewController {
-           destination.bike = bike
-        }
+                destination.bike = bike
+            }
     }
 
     /*

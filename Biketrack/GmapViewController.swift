@@ -11,9 +11,9 @@ import GoogleMaps
 
 class GmapViewController: UIViewController {
     
-    private var _bike: Bike!
+    private var _bike: BikeTest!
 
-    var bike: Bike {
+    var bike: BikeTest {
         get {
             return _bike
         } set {
@@ -24,10 +24,14 @@ class GmapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(bike.lat), longitude: CLLocationDegrees(bike.long), zoom: 5)
+        let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(50), longitude: CLLocationDegrees(50), zoom: 5)
         let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        let marker = GMSMarker()
+        marker.position = camera.target
+        marker.snippet = bike.name
+        marker.map = mapView
         self.view = mapView
-
+        
         // Do any additional setup after loading the view.
     }
 
