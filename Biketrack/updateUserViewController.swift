@@ -8,7 +8,7 @@
 
 import UIKit
 
-class updateUserViewController: UIViewController {
+class updateUserViewController: UIViewController, UITextFieldDelegate {
     private var _user: UserTest!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
@@ -25,12 +25,20 @@ class updateUserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.emailField.delegate = self
+        self.firstNameField.delegate = self
+        self.lastNameField.delegate = self
         emailField.text = user.mail
         firstNameField.text = user.name
         lastNameField.text = user.lastname
         // Do any additional setup after loading the view.
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
