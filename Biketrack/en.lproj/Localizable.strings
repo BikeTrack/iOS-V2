@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Biketrack
+
+  Created by Valentin Wallet on 05/07/2017.
+  Copyright © 2017 Valentin Wallet. All rights reserved.
+*/
+
+"Modify the bike" = "Modify the bike";
+"Delete the bike" = "Delete the bike";
+"Modify the account" = "Modify the account";
+"Log out" = "Log out";
+"Delete the account" = "Delete the account";
+"Change the language to French" = "Change the language to French";
