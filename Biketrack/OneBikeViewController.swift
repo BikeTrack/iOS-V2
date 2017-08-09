@@ -13,10 +13,10 @@ class OneBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var bikeImg: UIImageView!
     @IBOutlet weak var batteryImg: UIImageView!
     @IBOutlet weak var bikeTitle: UILabel!
-    private var _bike: BikeTest!
+    private var _bike: Bike!
     let menuManager = MenuManager()
     
-    var bike: BikeTest {
+    var bike: Bike {
         get {
             return _bike
         } set {

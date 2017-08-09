@@ -12,7 +12,7 @@
         <!--Bikes-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Biketrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="BikeListViewController" customModule="Biketrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -491,10 +491,10 @@
             </objects>
             <point key="canvasLocation" x="-2.3999999999999999" y="1476.6116941529237"/>
         </scene>
-        <!--Second View Controller-->
+        <!--User View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController storyboardIdentifier="userProfile" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Biketrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userProfile" id="8rJ-Kc-sve" customClass="UserViewController" customModule="Biketrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -590,7 +590,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oXc-Xt-zaM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oCa-K7-QLu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -633,10 +633,10 @@
         <image name="userunselected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qe9-dr-y1u"/>
-        <segue reference="jzB-JN-Xwl"/>
         <segue reference="Ehy-D6-Y7P"/>
-        <segue reference="81Q-R9-MyF"/>
+        <segue reference="vyC-dq-bMC"/>
+        <segue reference="fR0-v5-5Ab"/>
+        <segue reference="PvM-uA-9w5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.30588235289999999" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -27,37 +27,42 @@ class BiketrackAPI {
     static var token = ""
     static var userId = ""
     
-    static var provider = RxMoyaSugarProvider<BikeTrackTestRx>()
+    static var provider = RxMoyaSugarProvider<BikeTrackEndpoint>()
     
     static func login(username: String, password: String) -> Observable<Any> {
         print("on est sur du login")
-        return provider.request(BikeTrackTestRx.userLogIn(mail: username, password: password)).mapJSON()
+        return provider.request(BikeTrackEndpoint.userLogIn(mail: username, password: password)).mapJSON()
     }
     
     static func signup(username: String, password: String) -> Observable<Any> {
         print("on signup ")
-        return provider.request(BikeTrackTestRx.userCreate(mail: username, password: password)).mapJSON()
+        return provider.request(BikeTrackEndpoint.userCreate(mail: username, password: password)).mapJSON()
     }
     
-    static func getUserInfo() -> Observable<UserTest> {
-        let endpointClosure: (BikeTrackTestRx) -> Endpoint<BikeTrackTestRx> = { target in
+    static func getUserInfo() -> Observable<User> {
+        let endpointClosure: (BikeTrackEndpoint) -> Endpoint<BikeTrackEndpoint> = { target in
             let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
             return defaultEndpoint
                 .adding(newHTTPHeaderFields: ["x-access-token": BiketrackAPI.token])
                 .adding(newHTTPHeaderFields: ["Authorization": "9E34BA33E63D1C25AC7834971C211139936C68394FEBE2BC2EA5B5F7F8664F0"])
         }
-        provider = RxMoyaSugarProvider<BikeTrackTestRx>(endpointClosure: endpointClosure)
-        return provider.request(BikeTrackTestRx.userInfo(userId: BiketrackAPI.userId)).mapObject(type: UserTest.self, keyPath: "user")
+        provider = RxMoyaSugarProvider<BikeTrackEndpoint>(endpointClosure: endpointClosure)
+        return provider.request(BikeTrackEndpoint.userInfo(userId: BiketrackAPI.userId)).mapObject(type: User.self, keyPath: "user")
     }
     
-    static func getBikeInfo(bikeId: String) -> Observable<BikeTest> {
-        return provider.request(BikeTrackTestRx.bikeInfo(bikeId: bikeId)).mapObject(type: BikeTest.self, keyPath: "bike")
+    static func getBikeInfo(bikeId: String) -> Observable<Bike> {
+        return provider.request(BikeTrackEndpoint.bikeInfo(bikeId: bikeId)).mapObject(type: Bike.self, keyPath: "bike")
     }
     
-    static func getBattery(bike: BikeTest) -> Observable<BikeTest> {
-        return provider.request(BikeTrackTestRx.getLocations(trackerId: "7462C")).mapObject(type: TrackerTest.self, keyPath: "tracker").flatMap({ tracker -> Observable<BikeTest> in
+    static func debugBattery(bike: Bike) -> Observable<Any> {
+        return provider.request(BikeTrackEndpoint.getLocations(trackerId: "7462C")).mapJSON()
+    }
+    
+    static func getBattery(bike: Bike) -> Observable<Bike> {
+        return provider.request(BikeTrackEndpoint.getLocations(trackerId: "7462C")).mapObject(type: Tracker.self, keyPath: "tracker").flatMap({ tracker -> Observable<Bike> in
             print(tracker)
-            var newBike: BikeTest = bike
+            print("toto")
+            var newBike: Bike = bike
             newBike.batteryPercentage = (tracker.battery.last?.percentage)!
             print(newBike)
             return Observable.from(newBike)
@@ -65,27 +70,27 @@ class BiketrackAPI {
     }
     
     static func deleteBike(bikeId: String) -> Observable<Any> {
-        return provider.request(BikeTrackTestRx.deleteBike(bikeId: bikeId, userId: BiketrackAPI.userId)).mapJSON()
+        return provider.request(BikeTrackEndpoint.deleteBike(bikeId: bikeId, userId: BiketrackAPI.userId)).mapJSON()
     }
     
     static func updateBike(bikeId: String, name: String, brand: String, image: String) -> Observable<Any> {
-        return provider.request(BikeTrackTestRx.updateBike(bikeId: bikeId, name: name, brand: brand, image: image)).mapJSON()
+        return provider.request(BikeTrackEndpoint.updateBike(bikeId: bikeId, name: name, brand: brand)).mapJSON()
     }
     
     static func createABike(name: String, brand: String) -> Observable<Any> {
-        return provider.request(BikeTrackTestRx.createBike(userId: userId, name: name, brand: brand)).mapJSON()
+        return provider.request(BikeTrackEndpoint.createBike(userId: userId, name: name, brand: brand)).mapJSON()
     }
     
-    static func getLocations() -> Observable<TrackerTest> {
-        return provider.request(BikeTrackTestRx.getLocations(trackerId: "7462C")).mapObject(type: TrackerTest.self, keyPath: "tracker")
+    static func getLocations() -> Observable<Tracker> {
+        return provider.request(BikeTrackEndpoint.getLocations(trackerId: "7462C")).mapObject(type: Tracker.self, keyPath: "tracker")
     }
     
-    static func updateUser(email: String, name: String, lastname: String) -> Observable<UserTest> {
-        return provider.request(BikeTrackTestRx.updateUser(userId: userId, email: email, name: name, lastname: lastname)).mapObject(type: UserTest.self, keyPath: "user")
+    static func updateUser(email: String, name: String, lastname: String) -> Observable<User> {
+        return provider.request(BikeTrackEndpoint.updateUser(userId: userId, email: email, name: name, lastname: lastname)).mapObject(type: User.self, keyPath: "user")
     }
     
     static func deleteUser() -> Observable<Any> {
-        return provider.request(BikeTrackTestRx.deleteUser(userId: userId)).mapJSON()
+        return provider.request(BikeTrackEndpoint.deleteUser(userId: userId)).mapJSON()
     }
     
     static func setToken(token: String) {

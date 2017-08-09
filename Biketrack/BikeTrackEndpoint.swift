@@ -10,20 +10,20 @@ import Foundation
 import Moya
 import MoyaSugar
 
-enum BikeTrackTestRx {
+enum BikeTrackEndpoint {
     case userLogIn(mail: String, password: String)
     case userCreate(mail: String, password: String)
     case userInfo(userId: String)
     case bikeInfo(bikeId: String)
     case createBike(userId: String, name: String, brand: String)
     case deleteBike(bikeId: String, userId: String)
-    case updateBike(bikeId: String, name: String, brand: String, image: String)
+    case updateBike(bikeId: String, name: String, brand: String)
     case getLocations(trackerId: String)
     case updateUser(userId: String, email: String, name: String, lastname: String)
     case deleteUser(userId: String)
 }
 
-extension BikeTrackTestRx: SugarTargetType {
+extension BikeTrackEndpoint: SugarTargetType {
     var baseURL: URL { return URL(string: "https://bike-track-api.herokuapp.com")! }
     
     var route: Route {
@@ -40,7 +40,7 @@ extension BikeTrackTestRx: SugarTargetType {
             return .post("/bike")
         case .deleteBike(_, _):
             return .delete("/bike")
-        case .updateBike(_,_,_,_):
+        case .updateBike(_,_,_):
             return .patch("/bike")
         case .getLocations(let trackerId):
             return .get("/tracker/\(trackerId)")
@@ -77,16 +77,12 @@ extension BikeTrackTestRx: SugarTargetType {
                 "bikeId": "\(bikeId)",
                 "userId": "\(userId)"
             ]
-        case .updateBike(let bikeId, let name, let brand, let image):
+        case .updateBike(let bikeId, let name, let brand):
             return JSONEncoding.default => [
                 "bikeId": "\(bikeId)",
                 "update": [
                     "name": "\(name)",
-                    "brand": "\(brand)",
-                    "img": [
-                        "buffer": "\(image)",
-                        "contentType": "image/jpeg"
-                    ]
+                    "brand": "\(brand)"
                 ]
             ]
         case .updateUser(let userId, let email, let name, let lastname):

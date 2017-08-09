@@ -10,8 +10,8 @@
 		1FD123544F12E7459E247442 /* Pods_BiketrackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679BD37D16DF22F53408873E /* Pods_BiketrackTests.framework */; };
 		50689185AE759B4D6769C1A1 /* Pods_Biketrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C8F997928439FBEFEA86FA /* Pods_Biketrack.framework */; };
 		B6E6AEC81F08587000F78353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEC71F08587000F78353 /* AppDelegate.swift */; };
-		B6E6AECA1F08587000F78353 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEC91F08587000F78353 /* FirstViewController.swift */; };
-		B6E6AECC1F08587000F78353 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AECB1F08587000F78353 /* SecondViewController.swift */; };
+		B6E6AECA1F08587000F78353 /* BikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEC91F08587000F78353 /* BikeListViewController.swift */; };
+		B6E6AECC1F08587000F78353 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AECB1F08587000F78353 /* UserViewController.swift */; };
 		B6E6AECF1F08587000F78353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E6AECD1F08587000F78353 /* Main.storyboard */; };
 		B6E6AED11F08587000F78353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E6AED01F08587000F78353 /* Assets.xcassets */; };
 		B6E6AED41F08587000F78353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E6AED21F08587000F78353 /* LaunchScreen.storyboard */; };
@@ -20,8 +20,8 @@
 		B6E6AEF81F0859AF00F78353 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEF71F0859AF00F78353 /* LoginViewController.swift */; };
 		B6E6AEFA1F085F5E00F78353 /* BikeTrackAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEF91F085F5E00F78353 /* BikeTrackAPI.swift */; };
 		B6E6AEFC1F085FA900F78353 /* BikeTrackEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEFB1F085FA900F78353 /* BikeTrackEndpoint.swift */; };
-		B6E6AEFF1F08603800F78353 /* biketest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEFE1F08603800F78353 /* biketest.swift */; };
-		B6E6AF011F08605D00F78353 /* usertest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF001F08605D00F78353 /* usertest.swift */; };
+		B6E6AEFF1F08603800F78353 /* Bike.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEFE1F08603800F78353 /* Bike.swift */; };
+		B6E6AF011F08605D00F78353 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF001F08605D00F78353 /* User.swift */; };
 		B6E6AF031F0862C800F78353 /* createAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF021F0862C800F78353 /* createAccountViewController.swift */; };
 		B6E6AF051F0913C600F78353 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF041F0913C600F78353 /* TableViewCell.swift */; };
 		B6E6AF071F09174800F78353 /* OneBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF061F09174800F78353 /* OneBikeViewController.swift */; };
@@ -32,7 +32,7 @@
 		B6E6AF111F0A74F300F78353 /* updateBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF101F0A74F300F78353 /* updateBikeViewController.swift */; };
 		B6E6AF131F0A86FB00F78353 /* createBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF121F0A86FB00F78353 /* createBikeViewController.swift */; };
 		B6E6AF151F0AA8BA00F78353 /* updateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF141F0AA8BA00F78353 /* updateUserViewController.swift */; };
-		B6E6AF171F0BCB6300F78353 /* trackertest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF161F0BCB6300F78353 /* trackertest.swift */; };
+		B6E6AF171F0BCB6300F78353 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF161F0BCB6300F78353 /* Tracker.swift */; };
 		B6E6AF1E1F0C8BCB00F78353 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E6AF201F0C8BCB00F78353 /* Localizable.strings */; };
 		B6E6AF231F0D044F00F78353 /* L012Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AF221F0D044F00F78353 /* L012Localizer.swift */; };
 /* End PBXBuildFile section */
@@ -61,8 +61,8 @@
 		9EC7D6C9453B2FC7D2092F21 /* Pods-BiketrackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiketrackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6E6AEC41F08586F00F78353 /* Biketrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biketrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E6AEC71F08587000F78353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6E6AEC91F08587000F78353 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		B6E6AECB1F08587000F78353 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B6E6AEC91F08587000F78353 /* BikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListViewController.swift; sourceTree = "<group>"; };
+		B6E6AECB1F08587000F78353 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		B6E6AECE1F08587000F78353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6E6AED01F08587000F78353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6E6AED31F08587000F78353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 		B6E6AEF71F0859AF00F78353 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B6E6AEF91F085F5E00F78353 /* BikeTrackAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeTrackAPI.swift; sourceTree = "<group>"; };
 		B6E6AEFB1F085FA900F78353 /* BikeTrackEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BikeTrackEndpoint.swift; sourceTree = "<group>"; };
-		B6E6AEFE1F08603800F78353 /* biketest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = biketest.swift; sourceTree = "<group>"; };
-		B6E6AF001F08605D00F78353 /* usertest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = usertest.swift; sourceTree = "<group>"; };
+		B6E6AEFE1F08603800F78353 /* Bike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bike.swift; sourceTree = "<group>"; };
+		B6E6AF001F08605D00F78353 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B6E6AF021F0862C800F78353 /* createAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createAccountViewController.swift; sourceTree = "<group>"; };
 		B6E6AF041F0913C600F78353 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B6E6AF061F09174800F78353 /* OneBikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneBikeViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		B6E6AF101F0A74F300F78353 /* updateBikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateBikeViewController.swift; sourceTree = "<group>"; };
 		B6E6AF121F0A86FB00F78353 /* createBikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createBikeViewController.swift; sourceTree = "<group>"; };
 		B6E6AF141F0AA8BA00F78353 /* updateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateUserViewController.swift; sourceTree = "<group>"; };
-		B6E6AF161F0BCB6300F78353 /* trackertest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trackertest.swift; sourceTree = "<group>"; };
+		B6E6AF161F0BCB6300F78353 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		B6E6AF1A1F0C89D600F78353 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		B6E6AF1B1F0C89D600F78353 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B6E6AF1F1F0C8BCB00F78353 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -145,6 +145,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B6890DE21F3B9BD300E9A681 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				B6E6AEF91F085F5E00F78353 /* BikeTrackAPI.swift */,
+				B6E6AEFB1F085FA900F78353 /* BikeTrackEndpoint.swift */,
+			);
+			name = Api;
+			sourceTree = "<group>";
+		};
+		B6890DE31F3B9C1500E9A681 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B6E6AF0A1F0938A300F78353 /* MenuManager.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		B6E6AEBB1F08586F00F78353 = {
 			isa = PBXGroup;
 			children = (
@@ -170,22 +187,21 @@
 		B6E6AEC61F08586F00F78353 /* Biketrack */ = {
 			isa = PBXGroup;
 			children = (
+				B6890DE31F3B9C1500E9A681 /* Utility */,
+				B6890DE21F3B9BD300E9A681 /* Api */,
 				B6E6AEFD1F08602B00F78353 /* Model */,
 				B6E6AEC71F08587000F78353 /* AppDelegate.swift */,
-				B6E6AEC91F08587000F78353 /* FirstViewController.swift */,
-				B6E6AECB1F08587000F78353 /* SecondViewController.swift */,
+				B6E6AEC91F08587000F78353 /* BikeListViewController.swift */,
+				B6E6AECB1F08587000F78353 /* UserViewController.swift */,
 				B6E6AECD1F08587000F78353 /* Main.storyboard */,
 				B6E6AED01F08587000F78353 /* Assets.xcassets */,
 				B6E6AED21F08587000F78353 /* LaunchScreen.storyboard */,
 				B6E6AED51F08587000F78353 /* Info.plist */,
 				B6E6AEF71F0859AF00F78353 /* LoginViewController.swift */,
-				B6E6AEF91F085F5E00F78353 /* BikeTrackAPI.swift */,
-				B6E6AEFB1F085FA900F78353 /* BikeTrackEndpoint.swift */,
 				B6E6AF021F0862C800F78353 /* createAccountViewController.swift */,
 				B6E6AF041F0913C600F78353 /* TableViewCell.swift */,
 				B6E6AF061F09174800F78353 /* OneBikeViewController.swift */,
 				B6E6AF081F0919A300F78353 /* GmapViewController.swift */,
-				B6E6AF0A1F0938A300F78353 /* MenuManager.swift */,
 				B6E6AF0C1F0940CE00F78353 /* BaseCell.xib */,
 				B6E6AF0E1F094B5E00F78353 /* BaseViewCell.swift */,
 				B6E6AF101F0A74F300F78353 /* updateBikeViewController.swift */,
@@ -218,9 +234,9 @@
 		B6E6AEFD1F08602B00F78353 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B6E6AEFE1F08603800F78353 /* biketest.swift */,
-				B6E6AF001F08605D00F78353 /* usertest.swift */,
-				B6E6AF161F0BCB6300F78353 /* trackertest.swift */,
+				B6E6AEFE1F08603800F78353 /* Bike.swift */,
+				B6E6AF001F08605D00F78353 /* User.swift */,
+				B6E6AF161F0BCB6300F78353 /* Tracker.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -465,7 +481,7 @@
 				B6E6AF031F0862C800F78353 /* createAccountViewController.swift in Sources */,
 				B6E6AF0F1F094B5E00F78353 /* BaseViewCell.swift in Sources */,
 				B6E6AF071F09174800F78353 /* OneBikeViewController.swift in Sources */,
-				B6E6AF011F08605D00F78353 /* usertest.swift in Sources */,
+				B6E6AF011F08605D00F78353 /* User.swift in Sources */,
 				B6E6AF151F0AA8BA00F78353 /* updateUserViewController.swift in Sources */,
 				B6E6AF091F0919A300F78353 /* GmapViewController.swift in Sources */,
 				B6E6AEF81F0859AF00F78353 /* LoginViewController.swift in Sources */,
@@ -474,13 +490,13 @@
 				B6E6AEFC1F085FA900F78353 /* BikeTrackEndpoint.swift in Sources */,
 				B6E6AF111F0A74F300F78353 /* updateBikeViewController.swift in Sources */,
 				B6E6AF231F0D044F00F78353 /* L012Localizer.swift in Sources */,
-				B6E6AEFF1F08603800F78353 /* biketest.swift in Sources */,
+				B6E6AEFF1F08603800F78353 /* Bike.swift in Sources */,
 				B6E6AF051F0913C600F78353 /* TableViewCell.swift in Sources */,
 				B6E6AEFA1F085F5E00F78353 /* BikeTrackAPI.swift in Sources */,
-				B6E6AECC1F08587000F78353 /* SecondViewController.swift in Sources */,
+				B6E6AECC1F08587000F78353 /* UserViewController.swift in Sources */,
 				B6E6AEC81F08587000F78353 /* AppDelegate.swift in Sources */,
-				B6E6AF171F0BCB6300F78353 /* trackertest.swift in Sources */,
-				B6E6AECA1F08587000F78353 /* FirstViewController.swift in Sources */,
+				B6E6AF171F0BCB6300F78353 /* Tracker.swift in Sources */,
+				B6E6AECA1F08587000F78353 /* BikeListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

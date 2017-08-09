@@ -27,15 +27,15 @@ class L102Language {
     }
 }
 
-class SecondViewController: UIViewController {
+class UserViewController: UIViewController {
 
     @IBOutlet weak var userName: UILabel!
     let menuManager = MenuManager()
-    private var _user: UserTest!
+    private var _user: User!
     @IBOutlet weak var firstnameLbl: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var user: UserTest {
+    var user: User {
         get {
             return _user
         } set {

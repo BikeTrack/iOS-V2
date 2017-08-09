@@ -15,10 +15,10 @@ class updateBikeViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var bikeName: UITextField!
     @IBOutlet weak var bikeBrand: UITextField!
     @IBOutlet weak var bikePicture: UIImageView!
-    private var _bike: BikeTest!
+    private var _bike: Bike!
     var imageData: String = ""
     
-    var bike: BikeTest {
+    var bike: Bike {
         get {
             return _bike
         } set {

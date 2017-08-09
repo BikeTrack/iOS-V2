@@ -9,13 +9,13 @@
 import UIKit
 
 class updateUserViewController: UIViewController, UITextFieldDelegate {
-    private var _user: UserTest!
+    private var _user: User!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var updateProfilBtn: UIButton!
     
-    var user: UserTest {
+    var user: User {
         get {
             return _user
         } set {

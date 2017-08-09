@@ -9,7 +9,7 @@
 import Foundation
 import Mapper
 
-struct TrackerTest: Mappable {
+struct Tracker: Mappable {
     var locations: [Location]
     var battery: [Battery]
     
@@ -21,10 +21,10 @@ struct TrackerTest: Mappable {
 }
 
 struct Location: Mappable {
-    var coordinates: [Double]
+    let coordinates: [Double]?
     
     init(map: Mapper) throws {
-        try coordinates = map.from("coordinates")
+        coordinates = map.optionalFrom("coordinates")
     }
 }
 

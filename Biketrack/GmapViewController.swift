@@ -11,9 +11,9 @@ import GoogleMaps
 
 class GmapViewController: UIViewController {
 
-    private var _bike: BikeTest!
+    private var _bike: Bike!
     
-    var bike: BikeTest {
+    var bike: Bike {
         get {
             return _bike
         } set {
@@ -27,24 +27,27 @@ class GmapViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-    
     func setupRx() {
         _ = BiketrackAPI.getLocations()
             .subscribe({ event in
                 switch event {
                 case .next(let response):
                     print(response)
-                    let camera = GMSCameraPosition.camera(withLatitude: (response.locations.last?.coordinates[1])!, longitude: (response.locations.last?.coordinates[0])!, zoom: 15)
+                    var lastCoordinates = response.locations.last?.coordinates
+                    let camera = GMSCameraPosition.camera(withLatitude: (lastCoordinates![1]), longitude: (lastCoordinates![0]), zoom: 15)
                     let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
                     var i = 0
                     for location in response.locations {
                         let new_marker = GMSMarker()
-                        new_marker.position = CLLocationCoordinate2D(latitude: location.coordinates[1], longitude: location.coordinates[0])
-                        if (i == response.locations.count - 1) {
-                            new_marker.icon = GMSMarker.markerImage(with: .blue)
+                        if ((location.coordinates) != nil) {
+                            new_marker.position = CLLocationCoordinate2D(latitude: (location.coordinates![1]), longitude: (location.coordinates![0]))
+                            if (i == response.locations.count - 1) {
+                                new_marker.icon = GMSMarker.markerImage(with: .blue)
+                            }
+                            new_marker.map = mapView
+                        } else {
+                            print("erreur coordinates")
                         }
-                        new_marker.map = mapView
                         i += 1
                     }
                     self.view = mapView

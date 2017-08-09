@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class FirstViewController: UIViewController {
+class BikeListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,10 +33,14 @@ class FirstViewController: UIViewController {
             .flatMap {
                 Observable.from($0)
             }
-            .flatMap { bikeId -> Observable<BikeTest> in
+            .flatMap { bikeId -> Observable<Bike> in
+                print("biiiikkkeeIDDD")
+                print(bikeId)
                 return BiketrackAPI.getBikeInfo(bikeId: bikeId)
             }
-            .flatMap { bike -> Observable<BikeTest> in
+            .flatMap { bike -> Observable<Bike> in
+                print("biiiiike")
+                print(bike)
                 return BiketrackAPI.getBattery(bike: bike)
             }
             .toArray()
@@ -53,13 +57,10 @@ class FirstViewController: UIViewController {
                         cellToUse.bikeBatteryImage.image = UIImage(named: "003-technology")
                     }
                     cellToUse.bikeName.text = bike.name
-                    if (bike.img != nil) {
-                        let dataDecoded:Data = Data(base64Encoded: (bike.img?.buffer)!, options: .ignoreUnknownCharacters)!
-                        cellToUse.bikeImage.image = UIImage(data: dataDecoded)
-                    }
+                    
                 }
         }
-        tableView.rx.modelSelected(BikeTest.self)
+        _ = tableView.rx.modelSelected(Bike.self)
             .subscribe( onNext: {bike in
                 self.performSegue(withIdentifier: "OneBike", sender: bike)
             }
@@ -73,7 +74,7 @@ class FirstViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? OneBikeViewController {
-            if let oneBike = sender as? BikeTest {
+            if let oneBike = sender as? Bike {
                 destination.bike = oneBike
             }
         }

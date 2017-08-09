@@ -9,7 +9,7 @@
 import Foundation
 import Mapper
 
-struct UserTest: Mappable {
+struct User: Mappable {
     
     var mail: String
     var bikes: [String]
