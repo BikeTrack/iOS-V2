@@ -16,12 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Facebook
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         let storyBoard = UIStoryboard(name:"Main", bundle: nil)
         let loginVC = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
         self.window?.rootViewController = loginVC
         GMSServices.provideAPIKey("AIzaSyB3k_-s7Wooj0AujySf-qj7K_W5x_0w4Mw")
         L012Localizer.DoTheSwizzling()
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

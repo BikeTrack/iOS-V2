@@ -10,6 +10,7 @@ import UIKit
 
 class OneBikeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var bikeImg: UIImageView!
     @IBOutlet weak var batteryImg: UIImageView!
     @IBOutlet weak var bikeTitle: UILabel!
@@ -26,6 +27,8 @@ class OneBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        percentLabel.text = String(bike.batteryPercentage.rounded())
         switch bike.batteryPercentage {
         case 0...10:
             batteryImg.image = UIImage(named: "002-empty-battery")

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1FD123544F12E7459E247442 /* Pods_BiketrackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679BD37D16DF22F53408873E /* Pods_BiketrackTests.framework */; };
 		50689185AE759B4D6769C1A1 /* Pods_Biketrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C8F997928439FBEFEA86FA /* Pods_Biketrack.framework */; };
+		B6681BDA1F8416DE00344DA4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6681BD91F8416C700344DA4 /* Bolts.framework */; };
+		B6681BDB1F8416DE00344DA4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6681BD71F8416C700344DA4 /* FBSDKCoreKit.framework */; };
+		B6681BDC1F8416DE00344DA4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6681BD81F8416C700344DA4 /* FBSDKLoginKit.framework */; };
+		B6681BDD1F8416DE00344DA4 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6681BD61F8416C700344DA4 /* FBSDKMessengerShareKit.framework */; };
 		B6E6AEC81F08587000F78353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEC71F08587000F78353 /* AppDelegate.swift */; };
 		B6E6AECA1F08587000F78353 /* BikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AEC91F08587000F78353 /* BikeListViewController.swift */; };
 		B6E6AECC1F08587000F78353 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6AECB1F08587000F78353 /* UserViewController.swift */; };
@@ -59,6 +63,11 @@
 		679BD37D16DF22F53408873E /* Pods_BiketrackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiketrackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C8F997928439FBEFEA86FA /* Pods_Biketrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Biketrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC7D6C9453B2FC7D2092F21 /* Pods-BiketrackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiketrackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests.release.xcconfig"; sourceTree = "<group>"; };
+		B6681BD31F84100800344DA4 /* Biketrack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Biketrack-Bridging-Header.h"; sourceTree = "<group>"; };
+		B6681BD61F8416C700344DA4 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		B6681BD71F8416C700344DA4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B6681BD81F8416C700344DA4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B6681BD91F8416C700344DA4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B6E6AEC41F08586F00F78353 /* Biketrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biketrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E6AEC71F08587000F78353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6E6AEC91F08587000F78353 /* BikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +113,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				50689185AE759B4D6769C1A1 /* Pods_Biketrack.framework in Frameworks */,
+				B6681BDA1F8416DE00344DA4 /* Bolts.framework in Frameworks */,
+				B6681BDB1F8416DE00344DA4 /* FBSDKCoreKit.framework in Frameworks */,
+				B6681BDC1F8416DE00344DA4 /* FBSDKLoginKit.framework in Frameworks */,
+				B6681BDD1F8416DE00344DA4 /* FBSDKMessengerShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +141,10 @@
 		4B13384E3BC4981F2DE587EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6681BD91F8416C700344DA4 /* Bolts.framework */,
+				B6681BD71F8416C700344DA4 /* FBSDKCoreKit.framework */,
+				B6681BD81F8416C700344DA4 /* FBSDKLoginKit.framework */,
+				B6681BD61F8416C700344DA4 /* FBSDKMessengerShareKit.framework */,
 				81C8F997928439FBEFEA86FA /* Pods_Biketrack.framework */,
 				679BD37D16DF22F53408873E /* Pods_BiketrackTests.framework */,
 			);
@@ -209,6 +226,7 @@
 				B6E6AF141F0AA8BA00F78353 /* updateUserViewController.swift */,
 				B6E6AF221F0D044F00F78353 /* L012Localizer.swift */,
 				B6E6AF201F0C8BCB00F78353 /* Localizable.strings */,
+				B6681BD31F84100800344DA4 /* Biketrack-Bridging-Header.h */,
 			);
 			path = Biketrack;
 			sourceTree = "<group>";
@@ -316,6 +334,7 @@
 					B6E6AEC31F08586F00F78353 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = Z6NNV348NG;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					B6E6AED91F08587000F78353 = {
@@ -662,11 +681,31 @@
 			baseConfigurationReference = E3F2C58A51586ACCD1421137 /* Pods-Biketrack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = Z6NNV348NG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ModelMapper\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Moya\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Moya-ModelMapper\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MoyaSugar\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Result\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxCocoa\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxOptional\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxSwift\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
+					"/Users/wallet_v/Documents/FacebookSDKs-iOS-4.27.0/",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Biketrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Zanclus.Biketrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Biketrack/Biketrack-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -676,11 +715,30 @@
 			baseConfigurationReference = C2D17064FAE6F16B5790D5FF /* Pods-Biketrack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = Z6NNV348NG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ModelMapper\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Moya\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Moya-ModelMapper\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MoyaSugar\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Result\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxCocoa\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxOptional\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxSwift\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
+					"/Users/wallet_v/Documents/FacebookSDKs-iOS-4.27.0/",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Biketrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Zanclus.Biketrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./Biketrack/Biketrack-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
