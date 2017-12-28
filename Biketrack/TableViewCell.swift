@@ -12,7 +12,6 @@ class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var bikeImage: UIImageView!
     @IBOutlet weak var bikeName: UILabel!
-//    @IBOutlet weak var bikeBatteryImage: UIImageView!
     @IBOutlet weak var bikeBatteryImage: UIImageView!
     
     override func awakeFromNib() {

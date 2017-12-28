@@ -34,23 +34,50 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
   
     @IBAction func facebookLoginPushed(_ sender: Any) {
-        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) -> Void in
-            if (error == nil){
-                let fbloginresult : FBSDKLoginManagerLoginResult = result!
-                if(fbloginresult.grantedPermissions.contains("email"))
-                {
-                    self.getFBUserData()
+        if let currentToken = FBSDKAccessToken.current().tokenString {
+            print("déjà un token")
+        } else {
+            let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+            fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) -> Void in
+                if (error == nil){
+                    let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                    if(fbloginresult.grantedPermissions.contains("email"))
+                    {
+                        self.getFBUserData()
+                    }
                 }
             }
         }
     }
     
     func getFBUserData(){
-        if((FBSDKAccessToken.current()) != nil){
-            _ = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+        if let currentToken = FBSDKAccessToken.current().tokenString {
+            _ = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
-                    print(result)
+                    print("pas d'erreur")
+                    if let dict = result as? [String: String] {
+                        // Test de connexion
+                        if let email = dict["email"] {
+                            _ = BiketrackAPI.signup(username: email, password: currentToken).subscribe { event in
+                                switch event {
+                                case .next(let response):
+                                    print(response)
+                                    _ = BiketrackAPI.login(username: email, password: currentToken).subscribe { event in
+                                        switch event {
+                                        case .next(let response):
+                                            self.printResponse(response: response) ? self.performSegue(withIdentifier: "toTBC", sender: nil) : print("error")
+                                        default:
+                                            print("default login fb apres signup")
+                                            
+                                        }
+                                    }
+                                default:
+                                    print("default signup facebook")
+                                }
+                            }
+                        }
+                    }
+                    
                 }
             })
         }

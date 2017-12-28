@@ -34,6 +34,10 @@ class BiketrackAPI {
         return provider.request(BikeTrackEndpoint.userLogIn(mail: username, password: password)).mapJSON()
     }
     
+    static func getPicture() -> Observable<String> {
+        return provider.request(BikeTrackEndpoint.getPicture()).mapString()
+    }
+    
     static func signup(username: String, password: String) -> Observable<Any> {
         print("on signup ")
         return provider.request(BikeTrackEndpoint.userCreate(mail: username, password: password)).mapJSON()
@@ -50,7 +54,16 @@ class BiketrackAPI {
         return provider.request(BikeTrackEndpoint.userInfo(userId: BiketrackAPI.userId)).mapObject(type: User.self, keyPath: "user")
     }
     
+    static func addBikePicture(bikeId: String, pictureData: Data) -> Observable<Any> {
+        return provider.request(BikeTrackEndpoint.addBikePicture(bikeId: bikeId, pictureData: pictureData)).mapJSON()
+    }
+    
+    static func addBillPicture(bikeId: String, pictureData: Data) -> Observable<Any> {
+        return provider.request(BikeTrackEndpoint.addBillPicture(bikeId: bikeId, pictureData: pictureData)).mapJSON()
+    }
+    
     static func getBikeInfo(bikeId: String) -> Observable<Bike> {
+        print("ca fail ?")
         return provider.request(BikeTrackEndpoint.bikeInfo(bikeId: bikeId)).mapObject(type: Bike.self, keyPath: "bike")
     }
     
@@ -60,12 +73,38 @@ class BiketrackAPI {
     
     static func getBattery(bike: Bike) -> Observable<Bike> {
         return provider.request(BikeTrackEndpoint.getLocations(trackerId: "7462C")).mapObject(type: Tracker.self, keyPath: "tracker").flatMap({ tracker -> Observable<Bike> in
-            print(tracker)
-            print("toto")
             var newBike: Bike = bike
             newBike.batteryPercentage = (tracker.battery.last?.percentage)!
-            print(newBike)
             return Observable.from(newBike)
+        })
+    }
+    
+    static func getBikePicture(bike: Bike) -> Observable<Bike> {
+        return provider.request(BikeTrackEndpoint.getBikePicture(bikeId: bike.id)).mapString().flatMap({ imageString -> Observable<Bike> in
+            if imageString.count == "{\"success\":false,\"e\":{}}".count {
+                print("c'est une erreur")
+            } else {
+                var newBike: Bike = bike
+                newBike.bikeImage = imageString
+                return Observable.from(newBike)
+            }
+            return Observable.from(bike)
+        })
+    }
+    
+    static func getBikeBill(bike: Bike) -> Observable<Bike> {
+        print("getBikeBill")
+        return provider.request(BikeTrackEndpoint.getBillPicture(bikeId: bike.id)).mapString().flatMap({ imageString -> Observable<Bike> in
+            print("ici")
+            if imageString.count == "{\"success\":false,\"e\":{}}".count {
+                print("c'est une erreur de bill")
+            } else {
+                print("on add la bill")
+                var newBike: Bike = bike
+                newBike.bikeBill = imageString
+                return Observable.from(newBike)
+            }
+            return Observable.from(bike)
         })
     }
     

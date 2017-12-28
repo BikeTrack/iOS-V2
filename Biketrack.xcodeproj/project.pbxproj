@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1FD123544F12E7459E247442 /* Pods_BiketrackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679BD37D16DF22F53408873E /* Pods_BiketrackTests.framework */; };
 		50689185AE759B4D6769C1A1 /* Pods_Biketrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C8F997928439FBEFEA86FA /* Pods_Biketrack.framework */; };
+		B664345B1FEBE185006D5F5D /* PictureWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B664345A1FEBE185006D5F5D /* PictureWorker.swift */; };
+		B66434621FF5628E006D5F5D /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66434601FF5628E006D5F5D /* BillViewController.swift */; };
+		B66434631FF5628E006D5F5D /* BillViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66434611FF5628E006D5F5D /* BillViewController.xib */; };
 		B6681BDA1F8416DE00344DA4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6681BD91F8416C700344DA4 /* Bolts.framework */; };
 		B6681BDB1F8416DE00344DA4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6681BD71F8416C700344DA4 /* FBSDKCoreKit.framework */; };
 		B6681BDC1F8416DE00344DA4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6681BD81F8416C700344DA4 /* FBSDKLoginKit.framework */; };
@@ -63,6 +66,9 @@
 		679BD37D16DF22F53408873E /* Pods_BiketrackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BiketrackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C8F997928439FBEFEA86FA /* Pods_Biketrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Biketrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC7D6C9453B2FC7D2092F21 /* Pods-BiketrackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiketrackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests.release.xcconfig"; sourceTree = "<group>"; };
+		B664345A1FEBE185006D5F5D /* PictureWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureWorker.swift; sourceTree = "<group>"; };
+		B66434601FF5628E006D5F5D /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
+		B66434611FF5628E006D5F5D /* BillViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillViewController.xib; sourceTree = "<group>"; };
 		B6681BD31F84100800344DA4 /* Biketrack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Biketrack-Bridging-Header.h"; sourceTree = "<group>"; };
 		B6681BD61F8416C700344DA4 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		B6681BD71F8416C700344DA4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				B6E6AF0A1F0938A300F78353 /* MenuManager.swift */,
+				B664345A1FEBE185006D5F5D /* PictureWorker.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 				B6E6AF221F0D044F00F78353 /* L012Localizer.swift */,
 				B6E6AF201F0C8BCB00F78353 /* Localizable.strings */,
 				B6681BD31F84100800344DA4 /* Biketrack-Bridging-Header.h */,
+				B66434601FF5628E006D5F5D /* BillViewController.swift */,
+				B66434611FF5628E006D5F5D /* BillViewController.xib */,
 			);
 			path = Biketrack;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E6AF1E1F0C8BCB00F78353 /* Localizable.strings in Resources */,
+				B66434631FF5628E006D5F5D /* BillViewController.xib in Resources */,
 				B6E6AF0D1F0940CE00F78353 /* BaseCell.xib in Resources */,
 				B6E6AED41F08587000F78353 /* LaunchScreen.storyboard in Resources */,
 				B6E6AED11F08587000F78353 /* Assets.xcassets in Resources */,
@@ -406,9 +416,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -421,13 +435,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Biketrack-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6EE1DDEEC5D893EC75D2D85F /* [CP] Embed Pods Frameworks */ = {
@@ -436,9 +453,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Biketrack/Pods-Biketrack-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-ModelMapper/Moya_ModelMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/MoyaSugar/MoyaSugar.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ModelMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoyaSugar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -451,9 +489,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-ModelMapper/Moya_ModelMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/MoyaSugar/MoyaSugar.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ModelMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoyaSugar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,9 +525,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BiketrackTests/Pods-BiketrackTests-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -481,13 +544,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BiketrackTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -505,6 +571,7 @@
 				B6E6AF091F0919A300F78353 /* GmapViewController.swift in Sources */,
 				B6E6AEF81F0859AF00F78353 /* LoginViewController.swift in Sources */,
 				B6E6AF0B1F0938A300F78353 /* MenuManager.swift in Sources */,
+				B66434621FF5628E006D5F5D /* BillViewController.swift in Sources */,
 				B6E6AF131F0A86FB00F78353 /* createBikeViewController.swift in Sources */,
 				B6E6AEFC1F085FA900F78353 /* BikeTrackEndpoint.swift in Sources */,
 				B6E6AF111F0A74F300F78353 /* updateBikeViewController.swift in Sources */,
@@ -513,6 +580,7 @@
 				B6E6AF051F0913C600F78353 /* TableViewCell.swift in Sources */,
 				B6E6AEFA1F085F5E00F78353 /* BikeTrackAPI.swift in Sources */,
 				B6E6AECC1F08587000F78353 /* UserViewController.swift in Sources */,
+				B664345B1FEBE185006D5F5D /* PictureWorker.swift in Sources */,
 				B6E6AEC81F08587000F78353 /* AppDelegate.swift in Sources */,
 				B6E6AF171F0BCB6300F78353 /* Tracker.swift in Sources */,
 				B6E6AECA1F08587000F78353 /* BikeListViewController.swift in Sources */,

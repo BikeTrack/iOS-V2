@@ -9,7 +9,7 @@
 //
 
 
-NS_ASSUME_NONNULL_BEGIN
+NS_ASSUME_NONNULL_BEGIN;
 
 /**
  * Attribute name for match fragments in |GMSAutocompletePrediction| attributedFullText.
@@ -81,4 +81,4 @@ extern NSString *const kGMSAutocompleteMatchAttribute;
 
 @end
 
-NS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END;

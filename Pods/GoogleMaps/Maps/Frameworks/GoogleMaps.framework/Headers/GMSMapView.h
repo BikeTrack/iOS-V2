@@ -16,9 +16,13 @@
 #else
 #import <GoogleMapsBase/GoogleMapsBase.h>
 #endif
-#import <GoogleMaps/GMSDeprecationMacros.h>
-#import <GoogleMaps/GMSMapLayer.h>
-#import <GoogleMaps/GMSUISettings.h>
+#if __has_feature(modules)
+@import GoogleMapsBase;
+#else
+#import <GoogleMapsBase/GoogleMapsBase.h>
+#endif
+#import "GMSMapLayer.h"
+#import "GMSUISettings.h"
 
 @class GMSCameraPosition;
 @class GMSCameraUpdate;
@@ -31,7 +35,7 @@
 @class GMSOverlay;
 @class GMSProjection;
 
-NS_ASSUME_NONNULL_BEGIN
+NS_ASSUME_NONNULL_BEGIN;
 
 /** Delegate for events on GMSMapView. */
 @protocol GMSMapViewDelegate<NSObject>
@@ -198,9 +202,12 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
+ * \defgroup MapViewType GMSMapViewType
+ * @{
+ */
+
+/**
  * Display types for GMSMapView.
- *
- * @related GMSMapView
  */
 typedef NS_ENUM(NSUInteger, GMSMapViewType) {
   /** Basic maps.  The default. */
@@ -220,10 +227,15 @@ typedef NS_ENUM(NSUInteger, GMSMapViewType) {
 
 };
 
+/**@}*/
+
+/**
+ * \defgroup FrameRate GMSFrameRate
+ * @{
+ */
+
 /**
  * Rendering frame rates for GMSMapView.
- *
- * @related GMSMapView
  */
 typedef NS_ENUM(NSUInteger, GMSFrameRate) {
   /** Use the minimum frame rate to conserve battery usage. */
@@ -240,6 +252,34 @@ typedef NS_ENUM(NSUInteger, GMSFrameRate) {
    */
   kGMSFrameRateMaximum,
 };
+
+/**@}*/
+
+/**
+ * \defgroup MapViewPaddingAdjustmentBehavior GMSMapViewPaddingAdjustmentBehavior
+ * @{
+ */
+
+/**
+ * Constants indicating how safe area insets are added to padding.
+ */
+typedef NS_ENUM(NSUInteger, GMSMapViewPaddingAdjustmentBehavior) {
+  /** Always include the safe area insets in the padding. */
+  kGMSMapViewPaddingAdjustmentBehaviorAlways,
+
+  /**
+   * When the padding value is smaller than the safe area inset for a particular edge, use the safe
+   * area value for layout, else use padding.
+   */
+  kGMSMapViewPaddingAdjustmentBehaviorAutomatic,
+
+  /**
+   * Never include the safe area insets in the padding. This was the behavior prior to version 2.5.
+   */
+  kGMSMapViewPaddingAdjustmentBehaviorNever,
+};
+
+/**@}*/
 
 /**
  * This is the main class of the Google Maps SDK for iOS and is the entry point for all methods
@@ -363,6 +403,15 @@ typedef NS_ENUM(NSUInteger, GMSFrameRate) {
 @property(nonatomic, assign) UIEdgeInsets padding;
 
 /**
+ * Controls how safe area insets are added to the padding values. Like padding, safe area insets
+ * position map controls such as the compass, my location button and floor picker within the device
+ * safe area.
+ *
+ * Defaults to kGMSMapViewPaddingAdjustmentBehaviorAlways.
+ */
+@property(nonatomic, assign) GMSMapViewPaddingAdjustmentBehavior paddingAdjustmentBehavior;
+
+/**
  * Defaults to YES. If set to NO, GMSMapView will generate accessibility elements for overlay
  * objects, such as GMSMarker and GMSPolyline.
  *
@@ -394,17 +443,15 @@ typedef NS_ENUM(NSUInteger, GMSFrameRate) {
 
 /**
  * Tells this map to power up its renderer. This is optional and idempotent.
- *
- * This method is obsolete and deprecated and will be removed in a future release.
  */
-- (void)startRendering __GMS_AVAILABLE_BUT_DEPRECATED;
+- (void)startRendering __GMS_AVAILABLE_BUT_DEPRECATED_MSG(
+    "This method is obsolete and will be removed in a future release.");
 
 /**
  * Tells this map to power down its renderer. This is optional and idempotent.
- *
- * This method is obsolete and deprecated and will be removed in a future release.
  */
-- (void)stopRendering __GMS_AVAILABLE_BUT_DEPRECATED;
+- (void)stopRendering __GMS_AVAILABLE_BUT_DEPRECATED_MSG(
+    "This method is obsolete and will be removed in a future release.");
 
 /**
  * Clears all markup that has been added to the map, including markers, polylines and ground
@@ -456,4 +503,4 @@ extern NSString *const kGMSAccessibilityCompass;
  */
 extern NSString *const kGMSAccessibilityMyLocation;
 
-NS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END;

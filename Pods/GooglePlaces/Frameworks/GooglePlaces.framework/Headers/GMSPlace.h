@@ -10,16 +10,19 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+NS_ASSUME_NONNULL_BEGIN;
 
 @class GMSAddressComponent;
 @class GMSCoordinateBounds;
 
 
 /**
+ * \defgroup PlacesOpenNowStatus GMSPlacesOpenNowStatus
+ * @{
+ */
+
+/**
  * Describes the current open status of a place.
- *
- * @related GMSPlace
  */
 typedef NS_ENUM(NSInteger, GMSPlacesOpenNowStatus) {
   /** The place is open now. */
@@ -30,10 +33,15 @@ typedef NS_ENUM(NSInteger, GMSPlacesOpenNowStatus) {
   kGMSPlacesOpenNowStatusUnknown,
 };
 
+/**@}*/
+
+/**
+ * \defgroup PlacesPriceLevel GMSPlacesPriceLevel
+ * @{
+ */
+
 /**
  * Describes the price level of a place.
- *
- * @related GMSPlace
  */
 typedef NS_ENUM(NSInteger, GMSPlacesPriceLevel) {
   kGMSPlacesPriceLevelUnknown = -1,
@@ -43,6 +51,8 @@ typedef NS_ENUM(NSInteger, GMSPlacesPriceLevel) {
   kGMSPlacesPriceLevelHigh = 3,
   kGMSPlacesPriceLevelExpensive = 4,
 };
+
+/**@}*/
 
 /**
  * Represents a particular physical place. A GMSPlace encapsulates information about a physical
@@ -137,4 +147,4 @@ typedef NS_ENUM(NSInteger, GMSPlacesPriceLevel) {
 
 @end
 
-NS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END;

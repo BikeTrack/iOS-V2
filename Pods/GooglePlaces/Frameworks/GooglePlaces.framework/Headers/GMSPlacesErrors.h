@@ -15,19 +15,15 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+NS_ASSUME_NONNULL_BEGIN;
 
 /**
  * Error domain used for Places API errors.
- *
- * @related GMSPlacesErrors
  */
 extern NSString *const kGMSPlacesErrorDomain;
 
 /**
  * Error codes for |kGMSPlacesErrorDomain|.
- *
- * @related GMSPlacesErrors
  */
 typedef NS_ENUM(NSInteger, GMSPlacesErrorCode) {
   /**
@@ -38,34 +34,34 @@ typedef NS_ENUM(NSInteger, GMSPlacesErrorCode) {
    * The Places API server returned a response that we couldn't understand.
    * <p>
    * If you believe this error represents a bug, please file a report using the instructions on our
-   * <a href="https://developers.google.com/places/support">community and support page</a>.
+   * <a href="https://developers.google.com/places/ios-api/support">community and support page</a>.
    */
   kGMSPlacesServerError = -2,
   /**
    * An internal error occurred in the Places API library.
    * <p>
    * If you believe this error represents a bug, please file a report using the instructions on our
-   * <a href="https://developers.google.com/places/support">community and support page</a>.
+   * <a href="https://developers.google.com/places/ios-api/support">community and support page</a>.
    */
   kGMSPlacesInternalError = -3,
   /**
    * Operation failed due to an invalid (malformed or missing) API key.
    * <p>
-   * See the <a href="https://developers.google.com/places/ios/start">developer's guide</a>
+   * See the <a href="https://developers.google.com/places/ios-api/start">developer's guide</a>
    * for information on creating and using an API key.
    */
   kGMSPlacesKeyInvalid = -4,
   /**
    * Operation failed due to an expired API key.
    * <p>
-   * See the <a href="https://developers.google.com/places/ios/start">developer's guide</a>
+   * See the <a href="https://developers.google.com/places/ios-api/start">developer's guide</a>
    * for information on creating and using an API key.
    */
   kGMSPlacesKeyExpired = -5,
   /**
    * Operation failed due to exceeding the quota usage limit.
    * <p>
-   * See the <a href="https://developers.google.com/places/ios/usage">usage limits guide</a>
+   * See the <a href="https://developers.google.com/places/ios-api/usage">usage limits guide</a>
    * for information on usage limits and how to request a higher limit.
    */
   kGMSPlacesUsageLimitExceeded = -6,
@@ -90,15 +86,15 @@ typedef NS_ENUM(NSInteger, GMSPlacesErrorCode) {
   /**
    * The Places API for iOS is not enabled.
    * <p>
-   * See the <a href="https://developers.google.com/places/ios/start">developer's guide</a> for how
-   * to enable the Google Places API for iOS.
+   * See the <a href="https://developers.google.com/places/ios-api/start">developer's guide</a> for
+   * how to enable the Google Places API for iOS.
    */
   kGMSPlacesAccessNotConfigured = -9,
   /**
    * The application's bundle identifier does not match one of the allowed iOS applications for the
    * API key.
    * <p>
-   * See the <a href="https://developers.google.com/places/ios/start">developer's guide</a>
+   * See the <a href="https://developers.google.com/places/ios-api/start">developer's guide</a>
    * for how to configure bundle restrictions on API keys.
    */
   kGMSPlacesIncorrectBundleIdentifier = -10,
@@ -109,6 +105,6 @@ typedef NS_ENUM(NSInteger, GMSPlacesErrorCode) {
   kGMSPlacesLocationError = -11
 };
 
-NS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END;
 
 /**@}*/

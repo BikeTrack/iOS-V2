@@ -21,10 +21,15 @@ enum BikeTrackEndpoint {
     case getLocations(trackerId: String)
     case updateUser(userId: String, email: String, name: String, lastname: String)
     case deleteUser(userId: String)
+    case addBikePicture(bikeId: String, pictureData: Data)
+    case getPicture()
+    case getBikePicture(bikeId: String)
+    case addBillPicture(bikeId: String, pictureData: Data)
+    case getBillPicture(bikeId: String)
 }
 
 extension BikeTrackEndpoint: SugarTargetType {
-    var baseURL: URL { return URL(string: "https://bike-track-api.herokuapp.com")! }
+    var baseURL: URL { return URL(string: "http://163.172.81.184:3000")! }
     
     var route: Route {
         switch self {
@@ -48,6 +53,16 @@ extension BikeTrackEndpoint: SugarTargetType {
             return .patch("/profile")
         case .deleteUser(_):
             return .delete("/profile")
+        case .getPicture(_):
+            return .get("/testPicture")
+        case .addBikePicture(_, _):
+            return .post("/bikePostPicture")
+        case .getBikePicture(let bikeId):
+            return .get("/bikeGetPicture/\(bikeId)")
+        case .addBillPicture(_,_):
+            return .post("/bikePostBill")
+        case .getBillPicture(let bikeId):
+            return .get("/bikeGetBill/\(bikeId)")
         }
     }
     
@@ -55,12 +70,12 @@ extension BikeTrackEndpoint: SugarTargetType {
         switch self {
         case .userLogIn(let mail, let password):
             return JSONEncoding.default => [
-                "mail": "\(mail)",
+                "email": "\(mail)",
                 "password": "\(password)"
             ]
         case .userCreate(let mail, let password):
             return JSONEncoding.default => [
-                "mail": "\(mail)",
+                "email": "\(mail)",
                 "password": "\(password)"
             ]
         case .createBike(let userId, let name, let brand):
@@ -89,7 +104,7 @@ extension BikeTrackEndpoint: SugarTargetType {
             return JSONEncoding.default => [
                 "userId": "\(userId)",
                 "update": [
-                    "mail": "\(email)",
+                    "email": "\(email)",
                     "name": "\(name)",
                     "lastname": "\(lastname)"
                 ]
@@ -98,15 +113,35 @@ extension BikeTrackEndpoint: SugarTargetType {
             return JSONEncoding.default => [
                 "userId": "\(userId)"
             ]
+        case .addBikePicture(let bikeId, _):
+            return JSONEncoding.default => [
+                "bikeID": "\(bikeId)",
+                "photoBike": "image.jpg"
+            ]
         default:
             return nil
         }
     }
     
     var task: Task {
-        return .request
+        switch self {
+        case .addBikePicture(let bikeId, let pictureData):
+            let bikeId = MultipartFormData(provider: .data(bikeId.data(using: .utf8)!), name: "bikeId")
+            let bikePicture = MultipartFormData(provider: .data(pictureData), name: "photoBike", fileName: "image.jpg",
+                                                mimeType: "image/jpg")
+            let multipartData = [bikeId, bikePicture]
+            return .upload(UploadType.multipart(multipartData))
+        case .addBillPicture(let bikeId, let pictureData):
+            let bikeId = MultipartFormData(provider: .data(bikeId.data(using: .utf8)!), name: "bikeId")
+            let billPicture = MultipartFormData(provider: .data(pictureData), name: "photoBill", fileName: "image.png",
+                                                mimeType: "image/png")
+            let multipartData = [bikeId, billPicture]
+            return .upload(UploadType.multipart(multipartData))
+        default:
+            return .request
+        }
     }
-    
+
     var sampleData: Data {
         switch self {
         case .userLogIn(_):
@@ -128,6 +163,16 @@ extension BikeTrackEndpoint: SugarTargetType {
         case .updateUser(_):
             return "a remplir plus tard".data(using: .utf8)!
         case .deleteUser(_):
+            return "a remplir plus tard".data(using: .utf8)!
+        case .getPicture(_):
+            return "a remplir plus tard".data(using: .utf8)!
+        case .addBikePicture(_):
+            return "a remplir plus tard".data(using: .utf8)!
+        case .getBikePicture(_):
+            return "a remplir plus tard".data(using: .utf8)!
+        case .addBillPicture(_):
+            return "a remplir plus tard".data(using: .utf8)!
+        case .getBillPicture(_):
             return "a remplir plus tard".data(using: .utf8)!
         }
     }

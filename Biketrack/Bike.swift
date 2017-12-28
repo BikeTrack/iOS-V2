@@ -15,6 +15,8 @@ struct Bike: Mappable {
     var tracker: String
     var id: String
     var batteryPercentage: Double
+    var bikeImage: String
+    var bikeBill: String
     
     init(map: Mapper) throws {
         try name = map.from("name")
@@ -22,6 +24,8 @@ struct Bike: Mappable {
         try tracker = map.from("tracker")
         try id = map.from("_id")
         batteryPercentage = 0
+        bikeImage = ""
+        bikeBill = ""
     }
 }
 

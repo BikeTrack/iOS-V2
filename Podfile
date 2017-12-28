@@ -11,6 +11,7 @@ target 'Biketrack' do
        pod 'RxOptional'
        pod 'GoogleMaps'
        pod 'GooglePlaces'
+       pod 'SwiftyJSON'
 end
 
 target 'BiketrackTests' do
@@ -22,4 +23,5 @@ target 'BiketrackTests' do
        pod 'RxOptional'
        pod 'GoogleMaps'
        pod 'GooglePlaces'
+       pod 'SwiftyJSON'
 end

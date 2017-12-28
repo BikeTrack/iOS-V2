@@ -17,7 +17,7 @@ struct User: Mappable {
     var lastname: String?
     
     init(map: Mapper) throws {
-        try mail = map.from("mail")
+        try mail = map.from("email")
         try bikes = map.from("bikes")
         name = map.optionalFrom("name")
         lastname = map.optionalFrom("lastname")

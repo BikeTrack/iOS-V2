@@ -13,8 +13,9 @@ import RxSwift
 class updateBikeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var updateBtn: UIButton!
     @IBOutlet weak var bikeName: UITextField!
-    @IBOutlet weak var bikeBrand: UITextField!
-    @IBOutlet weak var bikePicture: UIImageView!
+    @IBOutlet weak var bikeImg: UIImageView!
+    @IBOutlet weak var bikeTracker: UITextField!
+    
     private var _bike: Bike!
     var imageData: String = ""
     
@@ -26,22 +27,22 @@ class updateBikeViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            bikePicture.image = image
-            let imageCompressed: Data = UIImageJPEGRepresentation(image, 0.1)!
-            let strBase64: String = imageCompressed.base64EncodedString(options: .lineLength64Characters)
-            imageData = strBase64
-        } else{
-            print("Something went wrong")
-        }
-        
-        self.dismiss(animated: true, completion: nil)
-    }
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            bikePicture.image = image
+//            let imageCompressed: Data = UIImageJPEGRepresentation(image, 0.1)!
+//            let strBase64: String = imageCompressed.base64EncodedString(options: .lineLength64Characters)
+//            imageData = strBase64
+//        } else{
+//            print("Something went wrong")
+//        }
+//
+//        self.dismiss(animated: true, completion: nil)
+//    }
     
     @IBAction func addPictureBikeBtn(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             imagePicker.allowsEditing = true
@@ -53,7 +54,6 @@ class updateBikeViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
         setupRx()
         bikeName.text = bike.name
-        bikeBrand.text = bike.brand
         // Do any additional setup after loading the view.
     }
 
@@ -65,7 +65,7 @@ class updateBikeViewController: UIViewController, UIImagePickerControllerDelegat
     func setupRx() {
         _ = updateBtn.rx.tap
             .flatMap({
-                return BiketrackAPI.updateBike(bikeId: self.bike.id, name: self.bikeName.text!, brand: self.bikeBrand.text!, image: self.imageData)})
+                return BiketrackAPI.updateBike(bikeId: self.bike.id, name: self.bikeName.text!, brand: "", image: self.imageData)})
             .subscribe({ event in
                 switch event {
                 case .next(let response):

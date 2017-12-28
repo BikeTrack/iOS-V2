@@ -34,6 +34,7 @@ class UserViewController: UIViewController {
     private var _user: User!
     @IBOutlet weak var firstnameLbl: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var userPicture: UIImageView!
     
     var user: User {
         get {
@@ -114,6 +115,20 @@ class UserViewController: UIViewController {
                     print("default svc")
                 }
             })
+        print("setuprx user")
+        _ = BiketrackAPI.getPicture()
+        .subscribe({event in
+            switch event {
+            case .next(let response):
+                let dataDecoded : Data = Data(base64Encoded: response, options: .ignoreUnknownCharacters)!
+                let decodedimage = UIImage(data: dataDecoded)
+                self.userPicture.image = decodedimage
+            case .error(let error):
+                print("error dans getPicture: \(error)")
+            default:
+                print("default getPicture")
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {
